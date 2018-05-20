@@ -22,6 +22,11 @@ $app->get('/test', function (Request $request, Response $response){
   ];
 
   return $this->get('view')->render($response, 'test.twig', $viewData);
-})
+});
+
+$app->get('/login', function (Request $request, Response $response){
+
+  return $this->get('view')->render($response, 'login.twig');
+});
 
 ?>

@@ -16,7 +16,6 @@ var pkg = require('./package.json');
 
 // Copy third party libraries from /node_modules into /vendor
 gulp.task('vendor', function() {
-
   // Bootstrap
   gulp.src([
       './node_modules/bootstrap/dist/**/*',
@@ -24,7 +23,18 @@ gulp.task('vendor', function() {
       '!./node_modules/bootstrap/dist/css/bootstrap-reboot*'
     ])
     .pipe(gulp.dest('./vendor/bootstrap'))
-
+  // ChartJS
+  gulp.src([
+      './node_modules/chart.js/dist/*.js'
+    ])
+    .pipe(gulp.dest('./vendor/chart.js'))
+  // DataTables
+  gulp.src([
+      './node_modules/datatables.net/js/*.js',
+      './node_modules/datatables.net-bs4/js/*.js',
+      './node_modules/datatables.net-bs4/css/*.css'
+    ])
+    .pipe(gulp.dest('./vendor/datatables/'))
   // Font Awesome
   gulp.src([
       './node_modules/font-awesome/**/*',
@@ -34,36 +44,60 @@ gulp.task('vendor', function() {
       '!./node_modules/font-awesome/*.{txt,json,md}'
     ])
     .pipe(gulp.dest('./vendor/font-awesome'))
-
   // jQuery
   gulp.src([
       './node_modules/jquery/dist/*',
       '!./node_modules/jquery/dist/core.js'
     ])
     .pipe(gulp.dest('./vendor/jquery'))
-
+  // jQuery Easing
+  gulp.src([
+      './node_modules/jquery.easing/*.js'
+    ])
+    .pipe(gulp.dest('./vendor/jquery-easing'))
 });
-
 // Compile SCSS
 gulp.task('css:compile', function() {
-  return gulp.src('./static/scss/**/*.scss')
+  return gulp.src('./scss/**/*.scss')
     .pipe(sass.sync({
       outputStyle: 'expanded'
     }).on('error', sass.logError))
-    .pipe(gulp.dest('./static/css'))
+    .pipe(gulp.dest('./css'))
 });
-
 // Minify CSS
 gulp.task('css:minify', ['css:compile'], function() {
   return gulp.src([
-      './static/css/*.css',
-      '!./static/css/*.min.css'
+      './css/*.css',
+      '!./css/*.min.css'
     ])
     .pipe(cleanCSS())
     .pipe(rename({
       suffix: '.min'
     }))
-    .pipe(gulp.dest('./static/css'));
+    .pipe(gulp.dest('./css'))
+    .pipe(browserSync.stream());
+});
+
+// Compile SCSS
+gulp.task('css:compile', function() {
+  return gulp.src('./public/scss/**/*.scss')
+    .pipe(sass.sync({
+      outputStyle: 'expanded'
+    }).on('error', sass.logError))
+    .pipe(gulp.dest('./public/css'))
+});
+
+// Minify CSS
+gulp.task('css:minify', ['css:compile'], function() {
+  return gulp.src([
+      './public/css/*.css',
+      '!./public/css/*.min.css'
+    ])
+    .pipe(cleanCSS())
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest('./public/css'));
 });
 
 // CSS
@@ -72,14 +106,14 @@ gulp.task('css', ['css:compile', 'css:minify']);
 // Minify JavaScript
 gulp.task('js:minify', function() {
   return gulp.src([
-      './static/js/*.js',
-      '!./static/js/*.min.js'
+      './public/js/*.js',
+      '!./public/js/*.min.js'
     ])
     .pipe(uglify())
     .pipe(rename({
       suffix: '.min'
     }))
-    .pipe(gulp.dest('./static/js'));
+    .pipe(gulp.dest('./public/js'));
 });
 
 // JS
