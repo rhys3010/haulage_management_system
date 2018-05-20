@@ -1,0 +1,84 @@
+\documentclass{project}
+\usepackage{longtable}
+\begin{document}
+\title{Haulage Management System}
+\subtitle{Test Specification}
+\author{Rhys Evans}     
+\shorttitle{HMS Test Spec}
+\date{20th May 2018}
+\version{0.2}
+\status{Draft}
+\configref{HM-QA-TS}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduction}
+\subsection{Purpose of this Document}
+This document aims to specify the details of each of the system tests to be executed as part of the formal test process for the Haulage Management software.
+
+\subsection{Scope}
+This document covers the system tests in reference to the requirements outlined in the Requirements Specifcition\cite{HM-QA-RS}.
+
+\subsection{Objectives}
+The objectives of this document are:
+
+\begin{itemize}
+	\item Define the system tests upon which the system will be designed
+\end{itemize}
+
+\newpage
+
+\section{Tests}
+
+\subsection{FR1 Access Management}
+
+\begin{longtable}{|p{0.7cm}|p{1cm}|p{3.5cm}|p{3.2cm}|p{3.5cm}|}
+	\hline
+	Test Ref & Req Tested & Test Content & Input & Pass Criteria \\ \hline \hline
+	001 & FR1 & Check that the first page displayed to the user upon loading is a login page, with input areas for credentials & Start software & Credentials prompt is displayed properly. \\ \hline
+	002 & FR1 & Check that the correct return message is displayed when the credentials form is submitted & Press Submit button & If the credentials were valid, advance application to dashboard with a logout option visible. If invalid return error message to user and clear the form for re-submission \\ \hline
+	003 & FR2 & Check that the list of hauliers is displayed reliably and correctly when navigated to & Navigate to hauliers list & A list of all registered hauliers is displayed with correct information \\ \hline
+	004 & FR2 & Check that hauliers list can be sorted properly & Press the sort button on each valid column of the list & The list should now be sorted by the selected criteria \\ \hline
+	005 & FR2 & Check that hauliers list can be searched successfully & Enter search term into search bar and press search & The list should now only contain elements that match the search criteria \\ \hline
+	006 & FR3 & Check that clicking the 'add haulier' button brings up a form & Clicking the 'add haulier' button & A modal should popup with a form and submit button to enter information \\ \hline
+	007 & FR3 & Check that the form validates the information entered and returns the correct behaviour & Fill in the form and press 'add' & If the form was filled in validly the modal should close and the user should be returned to the hauliers list. If the form was invalid the problematic text field shoul have a relevant error message and the form should be ready for re-submission \\ \hline
+	008 & FR3 & Check that the hauliers list is updated when a new haulier is added & Add a new haulier & The list should be updated and include the new haulier entry \\ \hline
+	009 & FR4 & Check that when the 'remove' button is clicked on any haulier that a dialog prompt appears & Press the 'remove' button by any haulier & A modal prompt with two options should appear, if the user selects 'yes' the modal should close and remove the haulier. If the user selects 'cancel' the modal should close and the list will remain unchanged. \\ \hline
+	010 & FR4 & Check that when a haulier is removed that the list has been updated & Press the remove button on any haulier and confirm the dialog & The list should no longer contain the haulier \\ \hline
+	011 & FR5 & Check that when the user navigates to 'all journeys' a list of all the logged journeys is presented & From the dashboard select 'view all journeys' & A correct list of all the journeys logged should be presented \\ \hline
+	012 & FR5 & Check that the displayed list of journeys can be sorted properly & Press the sort icon on any of the list's columns & The list should now be sorted by that criteria. \\ \hline
+	013 & FR5 & Check that the displayed list can be searched properly & Enter search criteria into the search bar and click 'search' & The list should now only contain entries matching the search criteria \\ \hline
+	014 & FR6 & Check that the user can view an individual haulier's journey & Select the 'view journeys' option from the hauliers list & The screen changes to a list of all the haulier's journey and a map representation \\ \hline
+	015 & FR6 & Check that the list of all the haulier's journeys can be sorted & Press the sort icon on any of the list's columns & The list should now be sorted by that criteria \\ \hline
+	016 & FR6 & Check that the list of hailier's journeys can be searched & Enter the search criteria into the search bar and submit & The list should now only contain entries matching the search criteria \\ \hline
+	017 & FR7 & Check that the user can log a new journey & Select the 'log a journey' option at the dashboard & The screen should change to an input form for a journey \\ \hline
+	018 & FR7 & Check that the form is validated correctly & Fill in the form and press 'add' & If the form is valid, the form will be submitted and the user will be informed, if the form is invalid the problematic input area will have an error above it and the form will be ready for resubmission \\ \hline
+	019 & FR7 & Check that the journeys list is updated correctly by new journeys & Log a new journey & The journeys list should be updated with the news journey \\ \hline
+	020 & FR8 & Check that when the user selects 'edit' on a journey that the correct modal is opened & Select 'edit' on a journey & A popup form with the current details of the journey should open and be editable \\ \hline
+	021 & FR8 & Check that the edit form is validated correctly & Fill the edit form and select 'edit' & If the form was inputted correctly the modal should close and inform the user the journey has been editted, if it was incorrec the modal will remain open with an error message by the problematic input area \\ \hline
+	022 & FR8 & Check that when the user edits or removes a journey that the changes are reflected properly on the list & Edit or remove a journey & The list should be updated to reflect these changes\\ \hline   
+\end{longtable}
+
+\clearpage
+\addcontentsline{toc}{section}{REFERENCES}
+\begin{thebibliography}{5}
+	\bibitem{HM-QA-RS} \emph{Haulage Management System}
+	Requirements Specification.
+	Rhys Evans HM-QA-RS 1.0 Release.
+\end{thebibliography}
+
+\clearpage
+\addcontentsline{toc}{section}{DOCUMENT HISTORY}
+\section*{DOCUMENT HISTORY}
+\begin{tabular}{|l | l | l | l | l |}
+	\hline
+	Version & CCF No. & Date & Changes made to Document & Changed by \\
+	\hline
+	0.1 & N/A & 2018-20-05 & Initial creation & RE \\
+	0.2 & N/A & 2018-20-05 & Created draft 1 of tests & RE \\
+	
+	\hline
+\end{tabular}
+\label{thelastpage}
+\end{document}

@@ -1,3 +1,3 @@
-HM-QA-RS,Requirements Specification,/docs/HM-QA-RS/,REVIEW,0.5
+HM-QA-RS,Requirements Specification,/docs/HM-QA-RS/,RELEASE,1.1
 HM-PR-1,Initial UI Prototype,/docs/HM-PR-1/,RELEASE,1.1
-HM-QA-TS,Testing Specification,/docs/HM-QA-TS/,DRAFT,0.1
+HM-QA-TS,Testing Specification,/docs/HM-QA-TS/,DRAFT,0.2

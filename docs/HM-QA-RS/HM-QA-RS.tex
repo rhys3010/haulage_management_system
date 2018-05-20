@@ -5,8 +5,8 @@
 \author{Rhys Evans}     
 \shorttitle{HMS Requirements}
 \date{17th May 2018}
-\version{0.5}
-\status{Review}
+\version{1.1}
+\status{Release}
 \configref{HM-QA-RS}
 \maketitle
 \tableofcontents
@@ -66,10 +66,10 @@ When the software is loaded, it will prompt the user for credentials. The system
 Users should be able to view a paginated, searchable and sortable list of all the Hauliers on the system. The list should identify the Haulier by name.\\
 
 \textit{FR3 Add Hauliers to the System}\\
-Users should be able to add new Hauliers to the system, to do this they will be required to enter essential information to identify the Haulier.\\
+Users should be able to add new Hauliers to the system, to do this they will be required to enter essential information to identify the Haulier. This form should be validated and should return an error if any of the information is invalid. \\
 
 \textit{FR4 Remove Hauliers from the System}\\
-Users should be able to remove Hauliers from the system, doing this will also remove all journeys associated with that Haulier.\\
+Users should be able to remove Hauliers from the system, doing this will also remove all journeys associated with that Haulier. The users should be prompted with a confirmation dialog. \\
 
 \textit{FR5 View All Journeys}\\
 Users should be able to view a list of all recorded journeys, this list should be searchable, sortable and filterable.\\
@@ -115,6 +115,8 @@ All entities within the system must be authorized and authenticated securely. Th
 	0.3 & N/A & 2018-17-05 & Added Section 3 & RE \\
 	0.4 & N/A & 2018-17-05 & Moved to Review & RE \\
 	0.5 & N/A & 2018-18-05 & Updated Functional Requirements & RE \\
+	1.0 & N/A & 2018-20-05 & Moved Document to Release & RE \\
+	1.1 & N/A & 2018-20-05 & Some tests made more specific & RE \\
 	
 	\hline
 \end{tabular}

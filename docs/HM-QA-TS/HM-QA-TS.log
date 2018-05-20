@@ -1,0 +1,569 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.9)  20 MAY 2018 18:12
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**HM-QA-TS.tex
+(./HM-QA-TS.tex
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+(./project.cls
+Group project doc style modified by N.W. Hardy 2010-10-12
+Document Class: project 2010/10/12 Group project Class
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count87
+\Gm@cntv=\count88
+\c@Gm@tempcnt=\count89
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks15
+
+
+Package geometry Warning: Over-specification in `h'-direction.
+    `width' (451.6875pt) is ignored.
+
+
+Package geometry Warning: Over-specification in `v'-direction.
+    `height' (672.1112pt) is ignored.
+
+)) (/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip43
+\LTright=\skip44
+\LTpre=\skip45
+\LTpost=\skip46
+\LTchunksize=\count90
+\LTcapwidth=\dimen111
+\LT@head=\box26
+\LT@firsthead=\box27
+\LT@foot=\box28
+\LT@lastfoot=\box29
+\LT@cols=\count91
+\LT@rows=\count92
+\c@LT@tables=\count93
+\c@LT@chunks=\count94
+\LT@p@ftn=\toks16
+)
+(./HM-QA-TS.aux)
+\openout1 = `HM-QA-TS.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69687pt
+* \textheight=731.23584pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-52.36449pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=103.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 12.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 12.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 12.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 12.
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 12.
+
+Overfull \hbox (0.5119pt too wide) in paragraph at lines 12--12
+[] $[]$ 
+ []
+
+[0
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./HM-QA-TS.toc)
+\tf@toc=\write3
+\openout3 = `HM-QA-TS.toc'.
+
+
+[1] [2]
+Overfull \hbox (0.52316pt too wide) in paragraph at lines 38--38
+[]|\OT1/cmr/m/n/10.95 Test
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--38
+[]|\OT1/cmr/m/n/10.95 Req
+ []
+
+
+Overfull \hbox (2.93727pt too wide) in paragraph at lines 38--38
+\OT1/cmr/m/n/10.95 Tested| 
+ []
+
+
+Underfull \hbox (badness 1259) in paragraph at lines 39--39
+\OT1/cmr/m/n/10.95 a lo-gin page, with
+ []
+
+
+Underfull \hbox (badness 4927) in paragraph at lines 39--39
+[]|\OT1/cmr/m/n/10.95 Credentials prompt
+ []
+
+
+Underfull \hbox (badness 3375) in paragraph at lines 40--40
+\OT1/cmr/m/n/10.95 cre-den-tials form is
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--40
+[]|\OT1/cmr/m/n/10.95 If the cre-den-tials
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--40
+\OT1/cmr/m/n/10.95 ap-pli-ca-tion to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--40
+\OT1/cmr/m/n/10.95 dash-board with a
+ []
+
+
+Underfull \hbox (badness 2285) in paragraph at lines 40--40
+\OT1/cmr/m/n/10.95 clear the form for
+ []
+
+
+Underfull \hbox (badness 3646) in paragraph at lines 41--41
+\OT1/cmr/m/n/10.95 of hauliers is dis-
+ []
+
+
+Underfull \hbox (badness 1173) in paragraph at lines 41--41
+\OT1/cmr/m/n/10.95 played re-li-ably and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
+[]|\OT1/cmr/m/n/10.95 Navigate to
+ []
+
+
+Underfull \hbox (badness 2990) in paragraph at lines 42--42
+\OT1/cmr/m/n/10.95 list can be sorted
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--43
+[]|\OT1/cmr/m/n/10.95 The list should
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--43
+\OT1/cmr/m/n/10.95 now only con-tain
+ []
+
+
+Underfull \hbox (badness 1460) in paragraph at lines 44--44
+[]|\OT1/cmr/m/n/10.95 Clicking the 'add
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
+[]|\OT1/cmr/m/n/10.95 A modal should
+ []
+
+
+Underfull \hbox (badness 1755) in paragraph at lines 44--44
+\OT1/cmr/m/n/10.95 and sub-mit but-ton
+ []
+
+
+Underfull \hbox (badness 1735) in paragraph at lines 45--45
+\OT1/cmr/m/n/10.95 val-i-dates the in-for-
+ []
+
+
+Underfull \hbox (badness 2035) in paragraph at lines 45--45
+\OT1/cmr/m/n/10.95 re-turns the cor-rect
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
+[]|\OT1/cmr/m/n/10.95 If the form was
+ []
+
+
+Underfull \hbox (badness 1558) in paragraph at lines 45--45
+\OT1/cmr/m/n/10.95 modal should close
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
+\OT1/cmr/m/n/10.95 form was in-valid
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
+\OT1/cmr/m/n/10.95 the prob-lem-atic
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
+\OT1/cmr/m/n/10.95 a rel-e-vant er-ror
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
+\OT1/cmr/m/n/10.95 mes-sage and the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--46
+[]|\OT1/cmr/m/n/10.95 Check that the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--46
+\OT1/cmr/m/n/10.95 hauliers list is
+ []
+
+
+Underfull \hbox (badness 1270) in paragraph at lines 46--46
+[]|\OT1/cmr/m/n/10.95 The list should be
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
+[]|\OT1/cmr/m/n/10.95 Check that when
+ []
+
+
+Underfull \hbox (badness 5431) in paragraph at lines 47--47
+\OT1/cmr/m/n/10.95 is clicked on any
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
+\OT1/cmr/m/n/10.95 but-ton by any
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
+[]|\OT1/cmr/m/n/10.95 A modal prompt
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
+\OT1/cmr/m/n/10.95 with two op-tions
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
+\OT1/cmr/m/n/10.95 should ap-pear, if
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
+\OT1/cmr/m/n/10.95 the modal should
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
+\OT1/cmr/m/n/10.95 close and re-move
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
+\OT1/cmr/m/n/10.95 the modal should
+ []
+
+
+Underfull \hbox (badness 3701) in paragraph at lines 48--48
+\OT1/cmr/m/n/10.95 haulier is re-moved
+ []
+
+
+Underfull \hbox (badness 1762) in paragraph at lines 48--48
+[]|\OT1/cmr/m/n/10.95 Press the re-move
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--48
+\OT1/cmr/m/n/10.95 but-ton on any
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--48
+\OT1/cmr/m/n/10.95 haulier and
+ []
+
+
+Underfull \hbox (badness 1178) in paragraph at lines 48--48
+[]|\OT1/cmr/m/n/10.95 The list should no
+ []
+
+
+Underfull \hbox (badness 4366) in paragraph at lines 48--48
+\OT1/cmr/m/n/10.95 longer con-tain the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--49
+[]|\OT1/cmr/m/n/10.95 From the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--49
+\OT1/cmr/m/n/10.95 dash-board se-lect
+ []
+
+
+Underfull \hbox (badness 2707) in paragraph at lines 50--50
+\OT1/cmr/m/n/10.95 be sorted by that
+ []
+
+
+Underfull \hbox (badness 2293) in paragraph at lines 51--51
+\OT1/cmr/m/n/10.95 played list can be
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--51
+[]|\OT1/cmr/m/n/10.95 Enter search
+ []
+
+
+Underfull \hbox (badness 8189) in paragraph at lines 51--51
+\OT1/cmr/m/n/10.95 cri-te-ria into the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--51
+\OT1/cmr/m/n/10.95 search bar and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+[]|\OT1/cmr/m/n/10.95 Select the 'view
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+\OT1/cmr/m/n/10.95 jour-neys' op-tion
+ []
+
+
+Underfull \hbox (badness 1546) in paragraph at lines 52--52
+\OT1/cmr/m/n/10.95 from the hauliers
+ []
+
+
+Underfull \hbox (badness 2707) in paragraph at lines 53--53
+\OT1/cmr/m/n/10.95 be sorted by that
+ []
+
+
+Underfull \hbox (badness 3815) in paragraph at lines 54--54
+[]|\OT1/cmr/m/n/10.95 Enter the search
+ []
+
+
+Underfull \hbox (badness 8189) in paragraph at lines 54--54
+\OT1/cmr/m/n/10.95 cri-te-ria into the
+ []
+
+
+Underfull \hbox (badness 1817) in paragraph at lines 55--55
+[]|\OT1/cmr/m/n/10.95 Select the 'log a
+ []
+
+
+Underfull \hbox (badness 4556) in paragraph at lines 55--55
+[]|\OT1/cmr/m/n/10.95 The screen should
+ []
+
+
+Underfull \hbox (badness 1102) in paragraph at lines 56--56
+\OT1/cmr/m/n/10.95 the form is in-valid
+ []
+
+
+Underfull \hbox (badness 1484) in paragraph at lines 56--56
+\OT1/cmr/m/n/10.95 put area will have
+ []
+
+
+Underfull \hbox (badness 4303) in paragraph at lines 56--56
+\OT1/cmr/m/n/10.95 an er-ror above it
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--57
+[]|\OT1/cmr/m/n/10.95 Check that the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--57
+\OT1/cmr/m/n/10.95 jour-neys list is
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--57
+[]|\OT1/cmr/m/n/10.95 The jour-neys list
+ []
+
+
+Underfull \hbox (badness 2521) in paragraph at lines 57--57
+\OT1/cmr/m/n/10.95 should be up-dated
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--57
+\OT1/cmr/m/n/10.95 with the news
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 57
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--58
+\OT1/cmr/m/n/10.95 user se-lects 'edit'
+ []
+
+
+Underfull \hbox (badness 2310) in paragraph at lines 58--58
+\OT1/cmr/m/n/10.95 on a jour-ney that
+ []
+
+
+Underfull \hbox (badness 2096) in paragraph at lines 58--58
+\OT1/cmr/m/n/10.95 the jour-ney should
+ []
+
+
+Underfull \hbox (badness 1558) in paragraph at lines 59--59
+\OT1/cmr/m/n/10.95 modal should close
+ []
+
+
+Underfull \hbox (badness 7344) in paragraph at lines 59--59
+\OT1/cmr/m/n/10.95 re-main open with
+ []
+
+
+Underfull \hbox (badness 1038) in paragraph at lines 60--60
+\OT1/cmr/m/n/10.95 a jour-ney that the
+ []
+
+
+Underfull \hbox (badness 1270) in paragraph at lines 60--60
+[]|\OT1/cmr/m/n/10.95 The list should be
+ []
+
+
+Underfull \hbox (badness 5726) in paragraph at lines 60--60
+\OT1/cmr/m/n/10.95 up-dated to re-flect
+ []
+
+[3] [4] [5] [6
+
+] [7
+
+] (./HM-QA-TS.aux) ) 
+Here is how much of TeX's memory you used:
+ 889 strings out of 493029
+ 11871 string characters out of 6136235
+ 114358 words of memory out of 5000000
+ 4468 multiletter control sequences out of 15000+600000
+ 8243 words of font info for 29 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 31i,13n,34p,407b,229s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
+x12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on HM-QA-TS.pdf (8 pages, 85451 bytes).
+PDF statistics:
+ 51 PDF objects out of 1000 (max. 8388607)
+ 35 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

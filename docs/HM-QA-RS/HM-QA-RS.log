@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.4)  18 MAY 2018 16:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.9)  20 MAY 2018 17:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -203,7 +203,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 96--98
 Here is how much of TeX's memory you used:
  798 strings out of 493029
  10803 string characters out of 6136235
- 72570 words of memory out of 5000000
+ 72571 words of memory out of 5000000
  4381 multiletter control sequences out of 15000+600000
  8243 words of font info for 29 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -213,7 +213,7 @@ cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
 x12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on HM-QA-RS.pdf (8 pages, 90673 bytes).
+Output written on HM-QA-RS.pdf (8 pages, 90749 bytes).
 PDF statistics:
  51 PDF objects out of 1000 (max. 8388607)
  35 compressed objects within 1 object stream
