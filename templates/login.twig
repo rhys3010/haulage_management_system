@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <base href="{{ base_url('') }}/"/>
-  <title>SB Admin - Start Bootstrap Template</title>
+  <title>Haulage Management System</title>
   <!-- Bootstrap core CSS-->
   <link href="css/bootstrap.min.css" rel="stylesheet" type"text/css">
   <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -20,32 +20,29 @@
   <script src="js/jquery.easing.min.js"></script>
 </head>
 
-<body class="bg-dark">
+<body>
+  <div class="container text-center mt-5">
+    <i class="fa fa-5x fa-truck" style="color: #0069d9;"></i>
+  </div>
   <div class="container">
     <div class="card card-login mx-auto mt-5">
-      <div class="card-header">Login</div>
+      <div class="card-header text-center text-muted">Haulage Management System</div>
       <div class="card-body">
         <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="Enter email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input class="form-control" id="exampleInputPassword1" type="password" placeholder="Password">
-          </div>
-          <div class="form-group">
-            <div class="form-check">
-              <label class="form-check-label">
-                <input class="form-check-input" type="checkbox"> Remember Password</label>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-user text-muted"></i></span>
             </div>
+            <input id="username" type="text" class="form-control" name="username" placeholder="Username">
           </div>
-          <a class="btn btn-primary btn-block" href="index.html">Login</a>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-lock text-muted"></i></span>
+            </div>
+            <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+          </div>
+          <a class="btn btn-primary btn-block text-white">Login</a>
         </form>
-        <div class="text-center">
-          <a class="d-block small mt-3" href="register.html">Register an Account</a>
-          <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
-        </div>
       </div>
     </div>
   </div>
