@@ -1,0 +1,122 @@
+\documentclass{project}
+\begin{document}
+\title{Haulage Management System}
+\subtitle{Requirements Specification}
+\author{Rhys Evans}     
+\shorttitle{HMS Requirements}
+\date{17th May 2018}
+\version{0.5}
+\status{Review}
+\configref{HM-QA-RS}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduction}
+\subsection{Purpose of this Document}
+This document aims to describe the requirements for a Haulage Management System. It will established an agreed upon set of functional, interface and performance requirements.
+
+\subsection{Scope}
+This requirements specification describes the functions needed to provide the services and attributes that are expected from the Haulage Management System as a finished product. It will also describe the requirements for the process of developing the system.
+
+\subsection{Objectives}
+The objectives of this document are:
+
+\begin{itemize}
+	\item To describe at a high level the Haulage Management System
+	\item To provide specific details of the criteria that the system must meet
+	\item To describe the types of interaction the system must support
+	\item To describe likely users of the system and their characteristics
+\end{itemize}
+
+\newpage
+
+\section{General Description}
+\subsection{Product Perspective}
+The Haulage Management System is a computerised system to record various aspects of registered Hauliers' journeys and present it to the user in a logical and intuitive way. The system will allow only approved users to input and view specific information.
+
+\subsection{Product Functions}
+The product will provide the following features:
+
+\begin{itemize}
+	\item View all registered Hauliers
+	\item Add/Remove Hauliers from the system
+	\item View all registered Hauliers
+	\item Fill an input form to log a Haulier's journey
+	\item View all journeys and the associated information
+	\begin{itemize}
+		\item Search for Haulier Journeys by specific criteria
+		\item Sort/Filter journeys by specific criteria
+		\item View individual haulers' journeys on a friendly GUI (interactive map)
+	\end{itemize}
+\end{itemize}
+
+\subsection{User Characteristics}
+The software will be used by Haulage logistics staff. These users are very familiar with industry specific information and domains. They are adept at logistical management and require a fast, easy and reliable system to support their workflow. The users will likely all be using Windows PCs with internet access.
+
+\newpage
+
+\section{Specific Requirements}
+
+\subsection{Functional Requirements}
+\textit{FR1 Access Management}\\
+When the software is loaded, it will prompt the user for credentials. The system will then verify these credentials, if they are valid the user will be redirected to the system dashboard. If the user enters invalid credentials, the system will display an error message and re-prompt the user. The user should also always have the option to log-out of the system.\\
+
+\textit{FR2 View list of all Hauliers}\\
+Users should be able to view a paginated, searchable and sortable list of all the Hauliers on the system. The list should identify the Haulier by name.\\
+
+\textit{FR3 Add Hauliers to the System}\\
+Users should be able to add new Hauliers to the system, to do this they will be required to enter essential information to identify the Haulier.\\
+
+\textit{FR4 Remove Hauliers from the System}\\
+Users should be able to remove Hauliers from the system, doing this will also remove all journeys associated with that Haulier.\\
+
+\textit{FR5 View All Journeys}\\
+Users should be able to view a list of all recorded journeys, this list should be searchable, sortable and filterable.\\
+
+\textit{FR6 View Individual Haulers' Journeys}\\
+Users should be able to view a given Haulier's journeys, the journeys will be displayed in a way that allows for easy searching, filtering and sorting. The user will also be able to view the frequency of each route for a given hauler.\\
+
+\textit{FR7 Log a Haulier's Journey}\\
+The user should be able to create a new record for a Haulier's journey, this will require them to fill out a form with the Haulier's Name, journey source, journey destination and the date/time.\\
+
+\textit{FR8 Edit/Remove a Haulier's Journey}\\
+The user should be able to edit a haulier journey record and alter any of the details, as well as remove the record entirely.\\
+
+\subsection{Performance Requirements}
+\textit{PR1 Response of program to user input}\\
+Any user input should be appropriately reflected on the screen within 3 seconds.\\
+
+\textit{PR2 Target computer for system}\\
+All software produced should run correctly on standard Windows PCs.\\
+
+\newpage
+
+\subsection{Security Requirements}
+\textit{SR1 User Authentication, Authorization and Data Protection}\\
+All entities within the system must be authorized and authenticated securely. The software should follow Information Security best practices and make use of secure and tested pre-existing frameworks and libraries. The software should conform to UK Data Protection laws. \cite{dpa98}\\
+
+\clearpage
+\addcontentsline{toc}{section}{REFERENCES}
+\begin{thebibliography}{5}
+	\bibitem{dpa98} \emph{Data Protection Act 1998, c.29}
+	Available at: http://www.legislation.gov.uk/ukpga/1998/29 (Accessed: 17th May 2018).
+\end{thebibliography}
+
+\clearpage
+\addcontentsline{toc}{section}{DOCUMENT HISTORY}
+\section*{DOCUMENT HISTORY}
+\begin{tabular}{|l | l | l | l | l |}
+	\hline
+	Version & CCF No. & Date & Changes made to Document & Changed by \\
+	\hline
+	0.1 & N/A & 2018-17-05 & Initial creation & RE \\
+	0.2 & N/A & 2018-17-05 & Added Section 1 and 2 & RE \\
+	0.3 & N/A & 2018-17-05 & Added Section 3 & RE \\
+	0.4 & N/A & 2018-17-05 & Moved to Review & RE \\
+	0.5 & N/A & 2018-18-05 & Updated Functional Requirements & RE \\
+	
+	\hline
+\end{tabular}
+\label{thelastpage}
+\end{document}
