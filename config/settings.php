@@ -12,6 +12,9 @@ $settings = [];
 $settings['displayErrorDetails'] = true;
 $settings['determineRouteBeforeAppMiddleware'] = true;
 
+// Project Settings
+$settings['version'] = '0.01';
+
 // Path settings
 $settings['root'] = dirname(__DIR__);
 $settings['temp'] = $settings['root'] . '/tmp';

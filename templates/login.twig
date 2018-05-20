@@ -9,6 +9,8 @@
   <meta name="author" content="">
   <base href="{{ base_url('') }}/"/>
   <title>Haulage Management System</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <!-- Bootstrap core CSS-->
   <link href="css/bootstrap.min.css" rel="stylesheet" type"text/css">
   <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -23,13 +25,14 @@
 <body>
   <div class="container text-center mt-5">
     <i class="fa fa-5x fa-truck" style="color: #0069d9;"></i>
+    <h3 class="mt-4 text-muted">Haulage Management System</h3>
   </div>
   <div class="container">
     <div class="card card-login mx-auto mt-5">
-      <div class="card-header text-center text-muted">Haulage Management System</div>
+      <div class="card-header text-muted text-center">Login</div>
       <div class="card-body">
         <form>
-          <div class="input-group mb-3">
+          <div class="input-group mb-3 success">
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fa fa-user text-muted"></i></span>
             </div>
@@ -44,6 +47,12 @@
           <a class="btn btn-primary btn-block text-white">Login</a>
         </form>
       </div>
+    </div>
+  </div>
+  <div class="container footnote mt-3 mx-auto text-muted">
+    <div class="row">
+      <div class="col text-left">&copy; Rhys Evans 2018</div>
+      <div class="col text-right">Version: {{ version }}</div>
     </div>
   </div>
 </body>

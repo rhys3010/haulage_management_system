@@ -1,6 +1,6 @@
 <?php
 /**
-  * Haulage Management System - Routtes File
+  * Haulage Management System - Routes File
   *
   * @author Rhys Evans
   * @version 19/05/2018
@@ -26,7 +26,11 @@ $app->get('/test', function (Request $request, Response $response){
 
 $app->get('/login', function (Request $request, Response $response){
 
-  return $this->get('view')->render($response, 'login.twig');
+  $viewData = [
+    'version' => '0.01'
+  ];
+
+  return $this->get('view')->render($response, 'login.twig', $viewData);
 });
 
 ?>
