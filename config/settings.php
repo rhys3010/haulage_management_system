@@ -8,12 +8,16 @@
 */
 $settings = [];
 
+// Load .env file for sensitive configs
+$dotenv = new Dotenv\Dotenv(__DIR__ . '/../');
+$dotenv->load();
+
 // Slim settings
 $settings['displayErrorDetails'] = true;
 $settings['determineRouteBeforeAppMiddleware'] = true;
 
 // Project Settings
-$settings['version'] = '0.01';
+$settings['version'] = getenv("APP_VERSION");
 
 // Path settings
 $settings['root'] = dirname(__DIR__);
