@@ -21,9 +21,25 @@ class Controller{
   // Program Version from settings
   protected $settings;
 
+  /**
+    * Base constructor for all controllers
+    * Instantiate settings object and container
+  */
   public function __construct($container){
     $this->container = $container;
     $this->settings = $container->get('settings');
+
+    // Initialize database container
+    $this->container->get('db');
+  }
+
+  /**
+    * Get any container property
+  */
+  public function __get($property){
+    if($this->container->{$property}){
+      return $this->container->{$property};
+    }
   }
 
 }

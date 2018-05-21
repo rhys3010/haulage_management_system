@@ -10,6 +10,7 @@
 
 namespace App\Controllers;
 
+use App\Models\User;
 use \Slim\Views\Twig as View;
 
 /**
@@ -20,13 +21,6 @@ class DashboardController extends Controller {
 
   public function index($request, $response){
 
-
-    /*
-    $user = $this->container->db->table('users')->find(6);
-
-    var_dump($user->email);
-
-    die();*/
 
     $data = [
       'version' => $this->settings['version']
