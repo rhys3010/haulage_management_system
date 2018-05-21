@@ -35,8 +35,8 @@ $container['view'] = function (Container $container) {
 
 
 // Login Container
-$container['LoginController'] = function($container){
-  return new \App\Controllers\LoginController($container);
+$container['AuthController'] = function($container){
+  return new \App\Controllers\Auth\AuthController($container);
 };
 
 // Dashboard Container
@@ -44,6 +44,15 @@ $container['DashboardController'] = function($container){
   return new \App\Controllers\DashboardController($container);
 };
 
+// Validator Container
+$container['validator'] = function($container){
+  return new App\Validation\Validator;
+};
+
+// Autho Container
+$container['auth'] = function($container){
+  return new \App\Auth\Auth;
+};
 
 // Database Container
 $container['db'] = function($container){
@@ -54,5 +63,19 @@ $container['db'] = function($container){
   $capsule->bootEloquent();
   return $capsule;
 };
+
+// Cross Site Request Forgery container
+$container['csrf'] = function($container){
+  return new \Slim\Csrf\Guard;
+};
+
+// Return errors
+$app->add(new \App\Middleware\ValidationErrorsMiddleware($container));
+
+// Return old input
+$app->add(new \App\Middleware\OldInputMiddleware($container));
+
+// Run the crsf check
+//$app->add($container->csrf);
 
 ?>

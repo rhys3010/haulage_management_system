@@ -10,8 +10,10 @@
 use Slim\Http\Request;
 use Slim\Http\Response;
 
-$app->get('/', 'LoginController:index');
-$app->get('/dashboard', 'DashboardController:index');
+$app->get('/', 'AuthController:getSignIn')->setName('auth.signin');
+$app->post('/', 'AuthController:postSignIn');
+
+$app->get('/dashboard', 'DashboardController:index')->setName('dashboard');
 
 
 ?>

@@ -26,19 +26,19 @@ $settings['public'] = $settings['root'] . '/public';
 
 // View settings
 $settings['twig'] = [
-    'path' => $settings['root'] . '/templates',
+    'path' => $settings['root'] . '/resources/views',
     'cache_enabled' => false,
     'cache_path' =>  $settings['temp'] . '/twig-cache'
 ];
 
 // Database settings
-$settings['db']['driver'] = getenv("DB_DRIVER");
-$settings['db']['host'] = getenv("DB_HOST");
-$settings['db']['database'] = getenv("DB_DATABASE");
-$settings['db']['username'] = getenv("DB_USERNAME");
-$settings['db']['password'] = getenv("DB_PASSWORD");
-$settings['db']['charset'] = getenv("DB_CHARSET");
-$settings['db']['collation'] = getenv("DB_COLLATION");
+$settings['db']['driver']     = getenv("DB_DRIVER");
+$settings['db']['host']       = getenv("DB_HOST");
+$settings['db']['database']   = getenv("DB_DATABASE");
+$settings['db']['username']   = getenv("DB_USERNAME");
+$settings['db']['password']   = getenv("DB_PASSWORD");
+$settings['db']['charset']    = getenv("DB_CHARSET");
+$settings['db']['collation']  = getenv("DB_COLLATION");
 
 return $settings;
 

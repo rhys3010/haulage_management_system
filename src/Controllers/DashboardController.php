@@ -18,7 +18,6 @@ use \Slim\Views\Twig as View;
 */
 class DashboardController extends Controller {
 
-
   public function index($request, $response){
 
 

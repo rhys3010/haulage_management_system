@@ -10,6 +10,10 @@
   font-size: 12px;
 }
 
+.has-error {
+  border: 2px solid red;
+}
+
 body {
   background-color: #f1f1f1;
 }
