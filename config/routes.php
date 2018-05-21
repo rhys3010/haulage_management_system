@@ -11,6 +11,7 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 
 $app->get('/', 'LoginController:index');
+$app->get('/dashboard', 'DashboardController:index');
 
 
 ?>

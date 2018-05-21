@@ -33,10 +33,14 @@ $container['view'] = function (Container $container) {
     return $twig;
 };
 
-// Login Controller
+// Login Container
 $container['LoginController'] = function($container){
   return new \App\Controllers\LoginController($container);
 };
 
+// Dashboard Container
+$container['DashboardController'] = function($container){
+  return new \App\Controllers\DashboardController($container);
+};
 
 ?>
