@@ -33,6 +33,7 @@ $container['view'] = function (Container $container) {
     return $twig;
 };
 
+
 // Login Container
 $container['LoginController'] = function($container){
   return new \App\Controllers\LoginController($container);
@@ -41,6 +42,17 @@ $container['LoginController'] = function($container){
 // Dashboard Container
 $container['DashboardController'] = function($container){
   return new \App\Controllers\DashboardController($container);
+};
+
+
+// Database Container
+$container['db'] = function($container){
+  // Eloquent Capsule Setup
+  $capsule = new \Illuminate\Database\Capsule\Manager;
+  $capsule->addConnection($container['settings']['db']);
+  $capsule->setAsGlobal();
+  $capsule->bootEloquent();
+  return $capsule;
 };
 
 ?>

@@ -20,6 +20,14 @@ class DashboardController extends Controller {
 
   public function index($request, $response){
 
+
+    /*
+    $user = $this->container->db->table('users')->find(6);
+
+    var_dump($user->email);
+
+    die();*/
+
     $data = [
       'version' => $this->settings['version']
     ];

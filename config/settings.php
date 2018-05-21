@@ -9,7 +9,7 @@
 $settings = [];
 
 // Load .env file for sensitive configs
-$dotenv = new Dotenv\Dotenv(__DIR__ . '/../');
+$dotenv = new Dotenv\Dotenv(__DIR__);
 $dotenv->load();
 
 // Slim settings
@@ -32,12 +32,13 @@ $settings['twig'] = [
 ];
 
 // Database settings
-$settings['db']['host'] = 'localhost';
-$settings['db']['username'] = 'root';
-$settings['db']['password'] = '';
-$settings['db']['database'] = 'test';
-$settings['db']['charset'] = 'utf8';
-$settings['db']['collation'] = 'utf8_unicode_ci';
+$settings['db']['driver'] = getenv("DB_DRIVER");
+$settings['db']['host'] = getenv("DB_HOST");
+$settings['db']['database'] = getenv("DB_DATABASE");
+$settings['db']['username'] = getenv("DB_USERNAME");
+$settings['db']['password'] = getenv("DB_PASSWORD");
+$settings['db']['charset'] = getenv("DB_CHARSET");
+$settings['db']['collation'] = getenv("DB_COLLATION");
 
 return $settings;
 
