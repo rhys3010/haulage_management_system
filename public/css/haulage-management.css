@@ -18,6 +18,11 @@
   visibility: visible;
 }
 
+.error {
+  border: 1px #a94442 solid;
+  border-radius: 5px;
+}
+
 body {
   background-color: #f1f1f1;
 }
@@ -29,4 +34,11 @@ h4,
 h5,
 h6 {
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.form-control {
+  outline: none;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
 }
