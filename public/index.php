@@ -14,6 +14,7 @@ session_start();
 */
 $app = require __DIR__ . '/../config/bootstrap.php';
 
+
 // Start
 $app->run();
 

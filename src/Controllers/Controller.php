@@ -28,9 +28,6 @@ class Controller{
   public function __construct($container){
     $this->container = $container;
     $this->settings = $container->get('settings');
-
-    // Initialize database container
-    $this->container->get('db');
   }
 
   /**

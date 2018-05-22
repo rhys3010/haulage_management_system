@@ -12,6 +12,24 @@ $container['environment'] = function () {
     return new Slim\Http\Environment($_SERVER);
 };
 
+// Auth Container
+$container['auth'] = function($container){
+  return new \App\Auth\Auth;
+};
+
+// Database Container
+$container['db'] = function($container){
+  // Eloquent Capsule Setup
+  $capsule = new \Illuminate\Database\Capsule\Manager;
+  $capsule->addConnection($container['settings']['db']);
+  $capsule->setAsGlobal();
+  $capsule->bootEloquent();
+  return $capsule;
+};
+
+// Initialize DB connection
+$container->get('db');
+
 // Register Twig View helper
 $container['view'] = function (Container $container) {
     $settings = $container->get('settings');
@@ -24,6 +42,12 @@ $container['view'] = function (Container $container) {
     /** @var Twig_Loader_Filesystem $loader */
     $loader = $twig->getLoader();
     $loader->addPath($settings['public'], 'public');
+
+    // Give view access to auth controller
+    $twig->getEnvironment()->addGlobal('auth',[
+      'check' => $container->auth->check(),
+      'user' => $container->auth->user(),
+    ]);
 
     // Instantiate and add Slim specific extension
     $router = $container->get('router');
@@ -49,33 +73,15 @@ $container['validator'] = function($container){
   return new App\Validation\Validator;
 };
 
-// Autho Container
-$container['auth'] = function($container){
-  return new \App\Auth\Auth;
-};
-
-// Database Container
-$container['db'] = function($container){
-  // Eloquent Capsule Setup
-  $capsule = new \Illuminate\Database\Capsule\Manager;
-  $capsule->addConnection($container['settings']['db']);
-  $capsule->setAsGlobal();
-  $capsule->bootEloquent();
-  return $capsule;
-};
-
 // Cross Site Request Forgery container
 $container['csrf'] = function($container){
   return new \Slim\Csrf\Guard;
 };
 
-// Return errors
-$app->add(new \App\Middleware\ValidationErrorsMiddleware($container));
-
 // Return old input
 $app->add(new \App\Middleware\OldInputMiddleware($container));
 
-// Run the crsf check
-//$app->add($container->csrf);
+// Return auth errors
+$app->add(new \App\Middleware\AuthErrorsMiddleware($container));
 
 ?>

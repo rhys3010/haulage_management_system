@@ -31,12 +31,15 @@
       <div class="card card-login mx-auto mt-5">
         <div class="card-header text-muted text-center">Login</div>
         <div class="card-body">
+        <div class="alert alert-danger {{ authError ? 'has-error' : '' }}">
+          {{ authError }}
+        </div>
           <form action="{{ path_for('auth.signin') }}" method="POST" autocomplete="off">
             <div class="input-group mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fa fa-user text-muted"></i></span>
               </div>
-              <input id="username" type="text" class="form-control" name="username" placeholder="Username">
+              <input id="username" type="text" class="form-control" name="username" placeholder="Username" value="{{ old.username }}">
             </div>
             <div class="input-group mb-3">
               <div class="input-group-prepend">
@@ -44,11 +47,7 @@
               </div>
               <input id="password" type="password" class="form-control" name="password" placeholder="Password" value="">
             </div>
-
-
             <button class="btn btn-primary btn-block text-white" type="submit">Login</button>
-
-            {{ csrf.field | raw }}
           </form>
         </div>
       </div>

@@ -10,8 +10,12 @@
   font-size: 12px;
 }
 
+.alert-danger {
+  visibility: hidden;
+}
+
 .has-error {
-  border: 2px solid red;
+  visibility: visible;
 }
 
 body {

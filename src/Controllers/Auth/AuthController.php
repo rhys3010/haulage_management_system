@@ -36,15 +36,13 @@ class AuthController extends Controller {
     );
 
     if(!$auth){
+      $_SESSION['authError'] = 'Invalid username or password';
       return $response->withRedirect($this->router->pathFor('auth.signin'));
     }
 
     return $response->withRedirect($this->router->pathFor('dashboard'));
 
   }
-
-
-
 }
 
 ?>
