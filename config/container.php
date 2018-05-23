@@ -87,6 +87,9 @@ $app->add(new \App\Middleware\OldInputMiddleware($container));
 // Return auth errors
 $app->add(new \App\Middleware\AuthErrorsMiddleware($container));
 
+// Return CSRF
+$app->add(new \App\Middleware\CsrfViewMiddleware($container));
+
 // Register CSRF
 $app->add($container->csrf);
 

@@ -48,6 +48,9 @@
               <input id="password" type="password" class="form-control" name="password" placeholder="Password" value="">
             </div>
             <button class="btn btn-primary btn-block text-white" type="submit">Login</button>
+
+            {{ csrf.field | raw }}
+
           </form>
         </div>
       </div>
