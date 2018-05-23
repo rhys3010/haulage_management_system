@@ -20,12 +20,7 @@ class AuthController extends Controller {
 
   public function getSignIn($request, $response){
 
-    // Send version number from config
-    $data = [
-      'version' => $this->settings['version']
-    ];
-
-    return $this->view->render($response, 'login.twig', $data);
+    return $this->view->render($response, 'login.twig');
   }
 
   public function postSignIn($request, $response){

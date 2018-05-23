@@ -78,10 +78,16 @@ $container['csrf'] = function($container){
   return new \Slim\Csrf\Guard;
 };
 
+// Register meta info middleware
+$app->add(new \App\Middleware\MetaMiddleware($container));
+
 // Return old input
 $app->add(new \App\Middleware\OldInputMiddleware($container));
 
 // Return auth errors
 $app->add(new \App\Middleware\AuthErrorsMiddleware($container));
+
+// Register CSRF
+$app->add($container->csrf);
 
 ?>

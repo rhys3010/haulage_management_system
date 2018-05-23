@@ -20,12 +20,7 @@ class DashboardController extends Controller {
 
   public function index($request, $response){
 
-
-    $data = [
-      'version' => $this->settings['version']
-    ];
-
-    return $this->container->view->render($response, 'dashboard.twig', $data);
+    return $this->container->view->render($response, 'dashboard.twig');
   }
 }
 

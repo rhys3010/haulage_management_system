@@ -18,16 +18,11 @@ class Controller{
   // Container object
   protected $container;
 
-  // Program Version from settings
-  protected $settings;
-
   /**
     * Base constructor for all controllers
-    * Instantiate settings object and container
   */
   public function __construct($container){
     $this->container = $container;
-    $this->settings = $container->get('settings');
   }
 
   /**
