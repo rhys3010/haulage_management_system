@@ -31,7 +31,7 @@
       <div class="card card-login mx-auto mt-5">
         <div class="card-header text-muted text-center">Login</div>
         <div class="card-body">
-        <div class="alert alert-danger {{ authError ? 'has-error' : '' }}">
+        <div {{ authError ? '' : 'hidden' }} class="alert alert-danger">
           {{ authError }}
         </div>
           <form action="{{ path_for('auth.signin') }}" method="POST" autocomplete="off">
