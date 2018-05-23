@@ -1,67 +1,41 @@
+{% extends 'templates/app.twig' %}
+
 {% block content %}
-  <!DOCTYPE html>
-  <html lang="en">
-
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="Rhys Evans">
-    <base href="{{ base_url('') }}/"/>
-    <title>Haulage Management System</title>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <!-- Bootstrap core CSS-->
-    <link href="css/bootstrap.min.css" rel="stylesheet" type"text/css">
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="css/haulage-management.min.css" rel="stylesheet" type="text/css">
-    <!-- Bootstrap core JavaScript-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="js/jquery.easing.min.js"></script>
-  </head>
-
-  <body>
-    <div class="container text-center mt-5">
-      <i class="fa fa-5x fa-truck" style="color: #0069d9;"></i>
-      <h3 class="mt-4 text-muted">Haulage Management System</h3>
-    </div>
-    <div class="container">
-      <div class="card card-login mx-auto mt-5">
-        <div class="card-header text-muted text-center">Login</div>
-        <div class="card-body">
-        <div {{ authError ? '' : 'hidden' }} class="alert alert-danger">
-          {{ authError }}
-        </div>
-          <form action="{{ path_for('auth.signin') }}" method="POST" autocomplete="off">
-            <div class="input-group mb-3 {{ authError ? 'error' : ''}}">
-              <div class="input-group-prepend">
-                <span class="input-group-text"><i class="fa fa-user text-muted"></i></span>
-              </div>
-              <input id="username" type="text" class="form-control" name="username" placeholder="Username" value="{{ old.username }}">
+  <div class="container text-center mt-5">
+    <i class="fa fa-5x fa-truck" style="color: #0069d9;"></i>
+    <h3 class="mt-4 text-muted">Haulage Management System</h3>
+  </div>
+  <div class="container">
+    <div class="card card-login mx-auto mt-5">
+      <div class="card-header text-muted text-center">Login</div>
+      <div class="card-body">
+      <div {{ authError ? '' : 'hidden' }} class="alert alert-danger">
+        {{ authError }}
+      </div>
+        <form action="{{ path_for('auth.signin') }}" method="POST" autocomplete="off">
+          <div class="input-group mb-3 {{ authError ? 'error' : ''}}">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-user text-muted"></i></span>
             </div>
-            <div class="input-group mb-3 {{ authError ? 'error' : ''}}">
-              <div class="input-group-prepend">
-                <span class="input-group-text"><i class="fa fa-lock text-muted"></i></span>
-              </div>
-              <input id="password" type="password" class="form-control" name="password" placeholder="Password" value="">
+            <input id="username" type="text" class="form-control" name="username" placeholder="Username" value="{{ old.username }}">
+          </div>
+          <div class="input-group mb-3 {{ authError ? 'error' : ''}}">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-lock text-muted"></i></span>
             </div>
-            <button class="btn btn-primary btn-block text-white" type="submit">Login</button>
+            <input id="password" type="password" class="form-control" name="password" placeholder="Password" value="">
+          </div>
+          <button class="btn btn-primary btn-block text-white" type="submit">Login</button>
 
-            {{ csrf.field | raw }}
-
-          </form>
-        </div>
+          {{ csrf.field | raw }}
+        </form>
       </div>
     </div>
-    <div class="container footnote mt-1 mx-auto text-muted">
-      <div class="row">
-        <div class="col text-left">&copy; Rhys Evans 2018</div>
-        <div class="col text-right">Version: {{ meta.version }}</div>
-      </div>
+  </div>
+  <div class="container footnote mt-1 mx-auto text-muted">
+    <div class="row">
+      <div class="col text-left">&copy; Rhys Evans 2018</div>
+      <div class="col text-right">Version: {{ meta.version }}</div>
     </div>
-  </body>
-
-  </html>
+  </div>
 {% endblock %}

@@ -39,9 +39,6 @@ $container['view'] = function (Container $container) {
         'cache' => $settings['twig']['cache_enabled'] ? $settings['twig']['cache_path'] : false
     ]);
 
-    /** @var Twig_Loader_Filesystem $loader */
-    $loader = $twig->getLoader();
-    $loader->addPath($settings['public'], 'public');
 
     // Give view access to auth controller
     $twig->getEnvironment()->addGlobal('auth',[
