@@ -29,7 +29,7 @@ class Auth{
   // Username = Username OR Email
   public function attempt($username, $password){
 
-    $user = User::where('username', $username);
+    $user = User::where('username', $username)->orWhere('email', $username)->first();
 
     // Check if user exists
     if(!$user){
