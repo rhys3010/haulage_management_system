@@ -10,11 +10,6 @@
   font-size: 12px;
 }
 
-.error {
-  border: 1px #a94442 solid;
-  border-radius: 5px;
-}
-
 footer.sticky-footer {
   position: absolute;
   right: 0;
@@ -96,6 +91,20 @@ body.fixed-nav {
 
 .scroll-to-top i {
   font-weight: 800;
+}
+
+.form-error {
+  border: 1px #dc3545 solid;
+  border-radius: 5px;
+}
+
+.form-success {
+  border: 1px #28a745 solid;
+  border-radius: 5px;
+}
+
+.password-input-icon {
+  background-color: transparent !important;
 }
 
 .form-control {

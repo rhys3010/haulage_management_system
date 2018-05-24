@@ -1,6 +1,7 @@
 <?php
 
 use Slim\Container;
+use Respect\Validation\Validator as v;
 
 /** @var \Slim\App $app */
 $container = $app->getContainer();
@@ -65,6 +66,11 @@ $container['DashboardController'] = function($container){
   return new \App\Controllers\DashboardController($container);
 };
 
+// Password Container
+$container['PasswordController'] = function($container){
+  return new \App\Controllers\Auth\PasswordController($container);
+};
+
 // Validator Container
 $container['validator'] = function($container){
   return new App\Validation\Validator;
@@ -74,6 +80,7 @@ $container['validator'] = function($container){
 $container['csrf'] = function($container){
   return new \Slim\Csrf\Guard;
 };
+
 
 // Register meta info middleware
 $app->add(new \App\Middleware\MetaMiddleware($container));
@@ -87,7 +94,15 @@ $app->add(new \App\Middleware\AuthErrorsMiddleware($container));
 // Return CSRF
 $app->add(new \App\Middleware\CsrfViewMiddleware($container));
 
+// Form Validation
+$app->add(new \App\Middleware\ValidationErrorsMiddleware($container));
+
+$app->passwordChanged = false;
+
 // Register CSRF
 $app->add($container->csrf);
+
+// Setup custom rules
+v::with('App\\Validation\\Rules\\');
 
 ?>

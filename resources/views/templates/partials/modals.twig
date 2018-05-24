@@ -1,0 +1,82 @@
+<!-- Password Change Modal -->
+<div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="passwordModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="passwordModalLabel">Change Password</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close" onclick="window.location.href='{{ path_for('dashboard') }}'">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <form action="{{ path_for('auth.password.change') }}" method="POST" autocomplete="off">
+        <div class="modal-body">
+          <div class="input-group mb-3 {{ errors.passwordOld ? 'form-error' : ''}}">
+            <input id="passwordOld" type="password" class="form-control" name="passwordOld" placeholder="Current Password">
+            <div class="input-group-append">
+              <span class="input-group-text  password-input-icon"><i class="fa {{ errors.passwordOld ? 'fa-times text-danger' : 'fa-check text-success'}}"></i></span>
+            </div>
+          </div>
+          <div class="input-group mb-3 {{ errors.passwordNew ? 'form-error' : ''}}">
+            <input id="passwordNew" type="password" class="form-control" name="passwordNew" placeholder="New Password">
+            <div class="input-group-append">
+              <span class="input-group-text  password-input-icon"><i class="fa {{ errors.passwordNew ? 'fa-times text-danger' : 'fa-check text-success'}}"></i></span>
+            </div>
+          </div>
+          <div class="input-group mb-3 {{ errors.passwordNew ? 'form-error' : ''}}">
+            <input id="passwordNewConfirm" type="password" class="form-control" name="passwordNewConfirm" placeholder="Confirm New Password">
+            <div class="input-group-append">
+              <span class="input-group-text  password-input-icon"><i class="fa {{ errors.passwordNew ? 'fa-times text-danger' : 'fa-check text-success'}}"></i></span>
+            </div>
+          </div>
+          <div {{ errors ? '' : 'hidden' }} class="alert alert-danger">
+            {{ errors | first | first }}
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="container text-center">
+            <button class="btn btn-secondary btn-danger" type="button" onclick="window.location.href='{{ path_for('dashboard') }}'">Cancel</button>
+            <button class="btn btn-primary btn-success" type="submit" href="">Submit</button>
+          </div>
+          {{ csrf.field | raw }}
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Logout Confirmation Modal -->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="logoutModalLabel">Confirm Logout</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">Are you sure you want to logout?</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary btn-danger" type="button" data-dismiss="modal">Cancel</button>
+        <a class="btn btn-primary btn-success" href="{{ path_for('auth.signout') }}">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Password Success Modal -->
+<div class="modal fade" id="passwordSuccessModal" tabindex="-1" role="dialog" aria-labelledby="passwordSuccessModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="passwordSuccessModalLabel">Password Changed Successfully</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        <button class="btn btn-primary btn-success" data-dismiss="modal">OK</button>
+
+      </div>
+    </div>
+  </div>
+</div>

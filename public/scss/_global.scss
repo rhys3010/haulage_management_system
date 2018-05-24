@@ -62,3 +62,18 @@ body.fixed-nav {
     font-weight: 800;
   }
 }
+
+.form-error{
+  border: 1px $error-color solid;
+  border-radius: 5px;
+}
+
+
+.form-success{
+  border: 1px $success-color solid;
+  border-radius: 5px;
+}
+
+.password-input-icon{
+  background-color: transparent !important;
+}

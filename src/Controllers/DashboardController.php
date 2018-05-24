@@ -20,7 +20,10 @@ class DashboardController extends Controller {
 
   public function index($request, $response){
 
-    return $this->container->view->render($response, 'dashboard.twig');
+    $this->container->view->render($response, 'dashboard.twig');
+
+    // If password was changed
+    echo "<script>$('#passwordSuccessModal').modal('show')</script>";
   }
 }
 
