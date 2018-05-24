@@ -11,6 +11,7 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 use App\Middleware\AuthMiddleware;
 use App\Middleware\GuestMiddleware;
+use App\Middleware\ModalMiddleware;
 
 
 // Guest Access Group
@@ -26,7 +27,7 @@ $app->group('', function(){
 $app->group('', function(){
 
   // Dashboard
-  $this->get('/dashboard', 'DashboardController:index')->setName('dashboard');
+  $this->get('/dashboard', 'DashboardController:index')->setName('dashboard')->add(new ModalMiddleware($this->getContainer()));
 
   // Logout
   $this->get('/auth/signout', 'AuthController:getSignOut')->setName('auth.signout');

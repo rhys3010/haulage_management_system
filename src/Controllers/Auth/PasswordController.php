@@ -36,6 +36,8 @@ class PasswordController extends Controller{
     // Change the password
     $this->auth->user()->setPassword($request->getParam('passwordNew'));
 
+    $_SESSION['passwordSuccessModal'] = true;
+
 
     return $response->withRedirect($this->router->pathFor('dashboard'));
   }
