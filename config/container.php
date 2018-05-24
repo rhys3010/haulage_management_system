@@ -45,6 +45,7 @@ $container['view'] = function (Container $container) {
     $twig->getEnvironment()->addGlobal('auth',[
       'check' => $container->auth->check(),
       'user' => $container->auth->user(),
+      'users' => $container->auth->users()
     ]);
 
     // Instantiate and add Slim specific extension

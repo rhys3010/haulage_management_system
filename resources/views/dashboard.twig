@@ -1,6 +1,55 @@
 {% extends 'templates/app.twig' %}
 {% block content %}
   {% include 'templates/partials/nav.twig' %}
-  <div class="container">
-  </div>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <div class="jumbotron">
+        <h1 class="display-5">Haulage Management System</h1>
+        <p class="lead">This system is designed to keep record of registered hauliers and their journeys. Please note that this software is still in development, therefore you may experience some issues or unexpected behaviour, if you encounter any of these issues please report them below.</p>
+        <hr class="my-4">
+        <p></p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#" role="button">Report a Bug</a>
+          <a class="btn btn-primary btn-lg mx-3" href="#" role="button">Changelog</a>
+          <a class="btn btn-primary btn-lg" href="#" role="button">Feedback</a>
+        </p>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="card-header">
+        <i class="fa fa-user mx-2"></i>Registered Users
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Date Registered</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Date Registered</th>
+              </tr>
+            </tfoot>
+            <tbody>
+              {% for user in auth.users %}
+                <tr>
+                  <td>{{ user.id }}</td>
+                  <td>{{ user.name }}</td>
+                  <td>{{ user.username }}</td>
+                  <td>{{ user.created_at }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
 {% endblock %}

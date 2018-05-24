@@ -13,6 +13,10 @@ use App\Models\User;
 
 class Auth{
 
+  public function users(){
+    return User::get();
+  }
+
   public function user(){
 
     if(isset($_SESSION['user'])){
