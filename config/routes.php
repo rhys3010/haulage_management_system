@@ -36,6 +36,8 @@ $app->group('', function(){
   $this->get('/auth/password/change', 'PasswordController:getChangePassword')->setName('auth.password.change');
   $this->post('/auth/password/change', 'PasswordController:postChangePassword');
 
+  $this->get('/hauliers', 'HauliersController:index')->setName('hauliers');
+
 })->add(new AuthMiddleware($container));
 
 

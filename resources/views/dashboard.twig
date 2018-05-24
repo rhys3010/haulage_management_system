@@ -16,40 +16,43 @@
       </div>
     </div>
     <div class="container-fluid">
-      <div class="card-header">
-        <i class="fa fa-user mx-2"></i>Registered Users
-      </div>
-      <div class="card-body">
-        <div class="table-responsive">
-          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Username</th>
-                <th>Date Registered</th>
-              </tr>
-            </thead>
-            <tfoot>
-              <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Username</th>
-                <th>Date Registered</th>
-              </tr>
-            </tfoot>
-            <tbody>
-              {% for user in auth.users %}
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-user mx-2"></i>Registered Users
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
                 <tr>
-                  <td>{{ user.id }}</td>
-                  <td>{{ user.name }}</td>
-                  <td>{{ user.username }}</td>
-                  <td>{{ user.created_at }}</td>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Username</th>
+                  <th>Date Registered</th>
                 </tr>
-              {% endfor %}
-            </tbody>
-          </table>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Username</th>
+                  <th>Date Registered</th>
+                </tr>
+              </tfoot>
+              <tbody>
+                {% for user in auth.users %}
+                  <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.created_at }}</td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
+  </div>
 {% endblock %}

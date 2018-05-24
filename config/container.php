@@ -72,6 +72,11 @@ $container['PasswordController'] = function($container){
   return new \App\Controllers\Auth\PasswordController($container);
 };
 
+// Hauliers Container
+$container['HauliersController'] = function($container){
+  return new \App\Controllers\HauliersController($container);
+};
+
 // Validator Container
 $container['validator'] = function($container){
   return new App\Validation\Validator;
