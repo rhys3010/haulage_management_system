@@ -11,6 +11,7 @@
 namespace App\Controllers;
 
 use App\Models\Haulier;
+use App\Models\User;
 use \Slim\Views\Twig as View;
 use Respect\Validation\Validator as v;
 
@@ -46,8 +47,13 @@ class HauliersController extends Controller {
 
   public function postRemoveHaulier($request, $response){
 
-    // Remove the haulier
-    $haulier = Haulier::destroy($request->getParam('id'));
+    $user = User::find($_SESSION['user']);
+
+    if($user->admin == 1){
+      // Remove the haulier
+      $haulier = Haulier::destroy($request->getParam('id'));
+    }
+
 
     return $response->withRedirect($this->router->pathFor('hauliers'));
   }

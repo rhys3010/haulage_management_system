@@ -87,7 +87,9 @@
                     <td>{{ haulier.created_at }}</td>
                     <td class="text-center"><button class="btn btn-primary btn-sm">View Journeys</button></td>
                     <td class="text-center">
-                      <button class="btn-remove-haulier"><i class="fa fa-trash text-danger" role="button" data-toggle="modal" rel="tooltip" data-target="#deleteHaulierModal-{{ haulier.id }}" data-placement="right" title="Delete Haulier"></i></button>
+                      {% if auth.user.admin %}
+                        <button class="btn-remove-haulier" type="button" data-toggle="modal" rel="tooltip" data-target="#deleteHaulierModal-{{ haulier.id }}" data-placement="right" title="Delete Haulier"><i class="fa fa-trash text-danger"></i></button>
+                      {% endif %}
                     </td>
                   </tr>
                 {% endfor %}
