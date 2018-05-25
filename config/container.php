@@ -83,6 +83,11 @@ $container['HauliersController'] = function($container){
   return new \App\Controllers\HauliersController($container);
 };
 
+// Admin Tools Container
+$container['AdminToolsController'] = function($container){
+  return new \App\Controllers\AdminToolsController($container);
+};
+
 // Validator Container
 $container['validator'] = function($container){
   return new App\Validation\Validator;

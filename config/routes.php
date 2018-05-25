@@ -51,6 +51,10 @@ $app->group('', function(){
   // Remove Hauliers
   $this->post('/hauliers/remove', 'HauliersController:postRemoveHaulier')->setName('hauliers.remove');
 
+  // Admin Tools
+  $this->get('/admin/manage', 'AdminToolsController:getManageUsers')->setName('admin.manage');
+  $this->get('/admin/register', 'AdminToolsController:getRegisterUser')->setName('admin.register');
+
 })->add(new AdminMiddleware($container));
 
 

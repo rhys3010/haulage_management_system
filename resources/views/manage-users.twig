@@ -1,0 +1,16 @@
+{% extends 'templates/app.twig' %}
+{% block content %}
+  {% include 'templates/partials/nav.twig' %}
+    <div class="content-wrapper">
+      <div class="container-fluid">
+        <!-- Breadcrumb -->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="{{ path_for('dashboard') }}">Dashboard</a>
+          </li>
+          <li class="breadcrumb-item active">Admin Tools</li>
+          <li class="breadcrumb-item active">Manage Users</li>
+        </ol>
+      </div>
+    </div>
+{% endblock %}
