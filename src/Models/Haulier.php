@@ -23,7 +23,6 @@ class Haulier extends Model{
     'name',
   ];
 
-  // TODO: Edit/Delete functions here?
 }
 
 

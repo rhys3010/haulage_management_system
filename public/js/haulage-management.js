@@ -46,5 +46,10 @@
 
 // Call the dataTables jQuery plugin
 $(document).ready(function() {
-  $('#dataTable').DataTable();
+  $('#dataTable').DataTable({
+    "columnDefs": [
+      //{ "width" : "1%", "targets": 3 },
+      { "width" : "1%", "targets": 4},
+    ]
+  });
 });

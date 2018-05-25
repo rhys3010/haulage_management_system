@@ -48,6 +48,11 @@ $container['view'] = function (Container $container) {
       'users' => $container->auth->users()
     ]);
 
+    // Give view access to Hauliers Controller
+    $twig->getEnvironment()->addGlobal('haulier', [
+      'all' => $container->HauliersController->all()
+    ]);
+
     // Instantiate and add Slim specific extension
     $router = $container->get('router');
     $uri = \Slim\Http\Uri::createFromEnvironment($container->get('environment'));
