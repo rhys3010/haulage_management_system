@@ -119,6 +119,10 @@ body.fixed-nav {
   max-width: 25%;
 }
 
+.btn-remove-haulier {
+  cursor: pointer;
+}
+
 .form-control {
   outline: none;
   -webkit-box-shadow: none !important;
