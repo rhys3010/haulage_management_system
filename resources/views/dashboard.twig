@@ -10,7 +10,7 @@
         <li class="breadcrumb-item active">My Dashboard</li>
       </ol>
       <div class="jumbotron">
-        <h1 class="display-5">Haulage Management System</h1>
+        <h1 class="display-5">Welcome, {{ auth.user.name | split(' ')[0] }}!</h1>
         <p class="lead">This system is designed to keep record of registered hauliers and their journeys. Please note that this software is still in development, therefore you may experience some issues or unexpected behaviour, if you encounter any of these issues please report them below.</p>
         <hr class="my-4">
         <p></p>

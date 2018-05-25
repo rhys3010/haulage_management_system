@@ -4,7 +4,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarResponsive">
-    <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+    <ul class="navbar-nav navbar-sidenav" id="mainNav">
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
         <a class="nav-link" href="{{ path_for('dashboard') }}">
           <i class="fa fa-fw fa-dashboard"></i>
@@ -35,6 +35,22 @@
           <span class="nav-link-text">Log a Journey</span>
         </a>
       </li>
+      {% if auth.user.admin %}
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Admin tools">
+          <a class="nav-link nav-link-collapse collapsed"  data-toggle="collapse" href="#collapseAdminTools" data-parent="#mainNav">
+            <i class="fa fa-fw fa-shield"></i>
+            <span class="nav-link-text">Admin Tools</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseAdminTools">
+            <li>
+              <a href="">Manage Users</a>
+            </li>
+            <li>
+              <a href="">Register a New User</a>
+            </li>
+          </ul>
+        </li>
+      {% endif %}
     </ul>
     <ul class="navbar-nav sidenav-toggler">
       <li class="nav-item">
