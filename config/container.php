@@ -45,7 +45,8 @@ $container['view'] = function (Container $container) {
     $twig->getEnvironment()->addGlobal('auth',[
       'check' => $container->auth->check(),
       'user' => $container->auth->user(),
-      'users' => $container->auth->users()
+      'users' => $container->auth->users(),
+      'checkAdmin' => $container->auth->checkAdmin(),
     ]);
 
     // Give view access to Hauliers Controller

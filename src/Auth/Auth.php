@@ -30,6 +30,12 @@ class Auth{
     }
   }
 
+  public function checkAdmin(){
+    $user = User::find($_SESSION['user']);
+
+    return $user->admin;
+  }
+
   // Username = Username OR Email
   public function attempt($username, $password){
 

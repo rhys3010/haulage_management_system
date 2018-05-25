@@ -28,7 +28,7 @@ class HauliersController extends Controller {
   public function postAddHaulier($request, $response){
 
     $validation = $this->validator->validate($request, [
-      'short_name' => v::notEmpty()->length(2, 10),
+      'short_name' => v::notEmpty()->length(2, 10)->uniqueHaulier(),
       'name' => v::notEmpty()->length(3, 255),
     ]);
 
@@ -47,9 +47,7 @@ class HauliersController extends Controller {
 
   public function postRemoveHaulier($request, $response){
 
-    $user = User::find($_SESSION['user']);
-
-    if($user->admin == 1){
+    if($this->container->auth->checkAdmin()){
       // Remove the haulier
       $haulier = Haulier::destroy($request->getParam('id'));
     }

@@ -12,6 +12,7 @@ use Slim\Http\Response;
 use App\Middleware\AuthMiddleware;
 use App\Middleware\GuestMiddleware;
 use App\Middleware\ModalMiddleware;
+use App\Middleware\AdminMiddleware;
 
 
 // Guest Access Group
@@ -36,13 +37,21 @@ $app->group('', function(){
   $this->get('/auth/password/change', 'PasswordController:getChangePassword')->setName('auth.password.change');
   $this->post('/auth/password/change', 'PasswordController:postChangePassword');
 
-  // View, Add and Remove Hauliers
+  // View, Add
   $this->get('/hauliers', 'HauliersController:getHauliers')->setName('hauliers');
   $this->post('/hauliers/add', 'HauliersController:postAddHaulier')->setName('hauliers.add');
-  $this->post('/hauliers/remove', 'HauliersController:postRemoveHaulier')->setName('hauliers.remove');
 
 
 })->add(new AuthMiddleware($container));
+
+
+// Admin Access
+$app->group('', function(){
+
+  // Remove Hauliers
+  $this->post('/hauliers/remove', 'HauliersController:postRemoveHaulier')->setName('hauliers.remove');
+
+})->add(new AdminMiddleware($container));
 
 
 

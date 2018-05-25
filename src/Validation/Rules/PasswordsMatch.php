@@ -9,7 +9,7 @@
 
 namespace App\Validation\Rules;
 
-use App\Modals\User;
+use App\Models\User;
 use Respect\Validation\Rules\AbstractRule;
 
 class PasswordsMatch extends AbstractRule{
