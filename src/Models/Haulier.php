@@ -20,6 +20,7 @@ class Haulier extends Model{
   protected $table = 'hauliers';
 
   protected $fillable = [
+    'short_name',
     'name',
   ];
 

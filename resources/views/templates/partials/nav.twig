@@ -46,7 +46,7 @@
     <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown">
         <a class="dropdown-toggle user-dropdown mx-2" data-toggle="dropdown" href="#">
-          <i class="fa fa-user fa-fw mx-2"></i>{{ auth.user.name }} ({{ auth.user.username }})
+          <i class="fa {{ auth.user.admin ? 'fa-shield' : 'fa-user' }} fa-fw mx-2"></i>{{ auth.user.name }} ({{ auth.user.username }})
         </a>
         <ul class="dropdown-menu dropdown-menu-right mt-3">
           <li><a class="user-dropdown-item" href="{{ path_for('auth.password.change') }}" data-target="#passwordModal"><i class="fa fa-gear fa-fw"></i>Change Password</a></li>

@@ -34,6 +34,7 @@
                   <th>ID</th>
                   <th>Name</th>
                   <th>Username</th>
+                  <th>Class</th>
                   <th>Date Registered</th>
                 </tr>
               </thead>
@@ -42,6 +43,7 @@
                   <th>ID</th>
                   <th>Name</th>
                   <th>Username</th>
+                  <th>Class</th>
                   <th>Date Registered</th>
                 </tr>
               </tfoot>
@@ -51,6 +53,7 @@
                     <td>{{ user.id }}</td>
                     <td>{{ user.name }}</td>
                     <td>{{ user.username }}</td>
+                    <td>{{ user.admin ? 'Admin' : 'User' }}</td>
                     <td>{{ user.created_at }}</td>
                   </tr>
                 {% endfor %}

@@ -27,6 +27,7 @@ class HauliersController extends Controller {
   public function postAddHaulier($request, $response){
 
     $validation = $this->validator->validate($request, [
+      'short_name' => v::notEmpty()->length(2, 10),
       'name' => v::notEmpty()->length(3, 255),
     ]);
 
@@ -35,6 +36,7 @@ class HauliersController extends Controller {
     }
 
     $haulier = Haulier::create([
+      'short_name' => $request->getParam('short_name'),
       'name' => $request->getParam('name'),
     ]);
 

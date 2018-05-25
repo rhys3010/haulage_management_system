@@ -46,10 +46,11 @@
 
 // Call the dataTables jQuery plugin
 $(document).ready(function() {
-  $('#dataTable').DataTable({
+  $('#hauliersTable').DataTable({
     "columnDefs": [
-      //{ "width" : "1%", "targets": 3 },
+      { "width" : "10%", "targets": 3 },
       { "width" : "1%", "targets": 4},
     ]
   });
+  $('#dataTable').DataTable();
 });

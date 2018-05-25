@@ -24,6 +24,7 @@ class User extends Model{
     'password',
     'name',
     'email',
+    'admin',
   ];
 
   public function setPassword($password){

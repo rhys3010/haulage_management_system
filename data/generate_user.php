@@ -32,12 +32,13 @@ $username = readline('Username: ');
 $password = readline('Password: ');
 $name = readline('Name: ');
 $email = readline('Email: ');
+$admin = readline('Admin? (0/1): ');
 
 // Hash Password
 $password = password_hash($password, PASSWORD_DEFAULT);
 
 // Create User Record
-$sql = "INSERT INTO users (username, password, name, email) VALUES ('".$username."', '".$password."', '".$name."', '".$email."')";
+$sql = "INSERT INTO users (username, password, name, email, admin) VALUES ('".$username."', '".$password."', '".$name."', '".$email."', '".$admin."')";
 
 
 // Perform SQL creation query
