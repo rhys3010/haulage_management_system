@@ -20,7 +20,7 @@
             <div {{ errors ? '' : 'hidden' }} class="alert alert-danger">
               {{ errors | first | first }}
             </div>
-            <form action="" method="POST" autocomplete="off">
+            <form action="{{ path_for('hauliers.add') }}" method="POST" autocomplete="off">
               <div class="input-group mb-3">
                 <input id="name" type="text" class="form-control" name="name" placeholder="Haulier Name" value="">
               </div>
@@ -58,12 +58,34 @@
               </tfoot>
               <tbody>
                 {% for haulier in haulier.all %}
+                  <div class="modal fade" id="deleteHaulierModal-{{ haulier.id }}" tabindex="-1" role="dialog" aria-labelledby="deleteHaulierModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="deleteHaulierModalLabel">Delete {{ haulier.name }}?</h5>
+                          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                          </button>
+                        </div>
+                        <div class="modal-footer">
+                          <button class="btn btn-secondary btn-danger" type="button" data-dismiss="modal">Cancel</button>
+                          <form action="{{ path_for('hauliers.remove') }}" method="POST" autocomplete="off">
+                            <input hidden id="id" type="text" name="id" value="{{ haulier.id }}">
+                            <button class="btn btn-primary btn-success" type="submit" href="">OK</button>
+                            {{ csrf.field | raw }}
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <tr>
                     <td>{{ haulier.id }}</td>
                     <td>{{ haulier.name }}</td>
                     <td>{{ haulier.created_at }}</td>
                     <td class="text-center"><button class="btn btn-primary btn-sm">View Journeys</button></td>
-                    <td class="text-center"><a href="" class="text-danger"><i class="fa fa-trash" data-toggle="tooltip" data-placement="right" title="Delete Haulier" ></i></a></td>
+                    <td class="text-center">
+                      <button type="submit"><i class="fa fa-trash text-danger" role="button" data-toggle="modal" rel="tooltip" data-target="#deleteHaulierModal-{{ haulier.id }}" data-placement="right" title="Delete Haulier" ></i></button>
+                    </td>
                   </tr>
                 {% endfor %}
               </tbody>

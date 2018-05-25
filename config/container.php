@@ -50,7 +50,7 @@ $container['view'] = function (Container $container) {
 
     // Give view access to Hauliers Controller
     $twig->getEnvironment()->addGlobal('haulier', [
-      'all' => $container->HauliersController->all()
+      'all' => $container->HauliersController->all(),
     ]);
 
     // Instantiate and add Slim specific extension

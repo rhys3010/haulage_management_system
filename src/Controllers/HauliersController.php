@@ -24,7 +24,7 @@ class HauliersController extends Controller {
     $this->container->view->render($response, 'hauliers.twig');
   }
 
-  public function postHauliers($request, $response){
+  public function postAddHaulier($request, $response){
 
     $validation = $this->validator->validate($request, [
       'name' => v::notEmpty()->length(3, 255),
@@ -42,6 +42,14 @@ class HauliersController extends Controller {
 
   }
 
+  public function postRemoveHaulier($request, $response){
+
+    // Remove the haulier
+    $haulier = Haulier::destroy($request->getParam('id'));
+
+    return $response->withRedirect($this->router->pathFor('hauliers'));
+  }
+
   /**
     * Return an array of all hauliers
   */
@@ -53,9 +61,7 @@ class HauliersController extends Controller {
 
   }
 
-  public function remove(){
 
-  }
 }
 
 ?>

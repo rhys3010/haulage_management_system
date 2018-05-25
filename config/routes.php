@@ -36,8 +36,11 @@ $app->group('', function(){
   $this->get('/auth/password/change', 'PasswordController:getChangePassword')->setName('auth.password.change');
   $this->post('/auth/password/change', 'PasswordController:postChangePassword');
 
+  // View, Add and Remove Hauliers
   $this->get('/hauliers', 'HauliersController:getHauliers')->setName('hauliers');
-  $this->post('/hauliers', 'HauliersController:postHauliers');
+  $this->post('/hauliers/add', 'HauliersController:postAddHaulier')->setName('hauliers.add');
+  $this->post('/hauliers/remove', 'HauliersController:postRemoveHaulier')->setName('hauliers.remove');
+
 
 })->add(new AuthMiddleware($container));
 
