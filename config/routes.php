@@ -56,6 +56,7 @@ $app->group('', function(){
   $this->get('/admin/register', 'AdminToolsController:getRegisterUser')->setName('admin.register');
 
   $this->post('/admin/user/remove', 'AdminToolsController:postRemoveUser')->setName('admin.user.remove');
+  $this->post('/admin/user/add', 'AdminToolsController:postAddUser')->setName('admin.user.add');
 
 })->add(new AdminMiddleware($container));
 

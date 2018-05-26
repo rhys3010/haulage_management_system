@@ -12,6 +12,7 @@ namespace App\Controllers;
 
 use App\Models\User;
 use \Slim\Views\Twig as View;
+use Respect\Validation\Validator as v;
 
 class AdminToolsController extends Controller {
 
@@ -35,6 +36,30 @@ class AdminToolsController extends Controller {
     }
 
     return $response->withRedirect($this->router->pathFor('admin.manage'));
+  }
+
+  public function postAdduser($request, $response){
+
+    $validation = $this->validator->validate($request, [
+      'name' => v::notEmpty()->length(2, 255),
+      'email' => v::notEmpty()->noWhitespace(),// Email Available
+      'username' => v::notEmpty()->noWhitespace(), // Username Available
+      'password' => v::notEmpty()->passwordsMatch($request->getParam('password-confirm')),
+    ]);
+
+    if($validation->failed()){
+      return $response->withRedirect($this->router->pathFor('admin.register'));
+    }
+
+    // Create the new user
+    $user = User::create([
+      'username' => $request->getParam('username'),
+      'password'=> password_hash($request->getParam('password'), PASSWORD_DEFAULT),
+      'name' => $request->getParam('name'),
+      'email'=>$request->getParam('email'),
+    ]);
+
+    return $response->withRedirect($this->router->pathFor('admin.register'));
   }
 }
 

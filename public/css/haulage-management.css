@@ -111,12 +111,20 @@ body.fixed-nav {
   max-width: 25%;
 }
 
+.card-register-user {
+  max-width: 50%;
+}
+
 .card-register-haulier .card-header {
   cursor: pointer;
 }
 
 .btn-register-haulier {
   max-width: 25%;
+}
+
+.btn-register-user {
+  max-width: 50%;
 }
 
 .btn-remove {

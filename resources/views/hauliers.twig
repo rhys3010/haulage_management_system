@@ -22,10 +22,10 @@
             </div>
             <form action="{{ path_for('hauliers.add') }}" method="POST" autocomplete="off">
               <div class="input-group mb-3">
-                <input id="short_name" type="text" class="form-control" name="short_name" placeholder="Haulier Abbreviation (e.g 'ERPH')" value="">
+                <input id="short_name" type="text" class="form-control {{ errors.short_name ? 'form-error' : '' }}" name="short_name" placeholder="Haulier Abbreviation (e.g 'ERPH')" value="">
               </div>
               <div class="input-group mb-3">
-                <input id="name" type="text" class="form-control" name="name" placeholder="Haulier Name" value="">
+                <input id="name" type="text" class="form-control {{ errors.name ? 'form-error' : '' }}" name="name" placeholder="Haulier Name" value="">
               </div>
               <button class="btn btn-success btn-block text-white btn-register-haulier mx-auto" type="submit">Register</button>
               {{ csrf.field | raw }}

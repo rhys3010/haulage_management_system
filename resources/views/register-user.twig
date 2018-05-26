@@ -11,6 +11,36 @@
           <li class="breadcrumb-item active">Admin Tools</li>
           <li class="breadcrumb-item active">Register a New User</li>
         </ol>
+        <!-- Register User Card -->
+        <div class="card mb-3 card-register-user mx-auto">
+          <div class="card-header">
+            <i class="fa fa-user-plus mx-2"></i>Register New User
+          </div>
+          <div class="card-body">
+            <div {{ errors ? '' : 'hidden' }} class="alert alert-danger">
+              {{ errors | first | first }}
+            </div>
+            <form action="{{ path_for('admin.user.add') }}" method="POST" autocomplete="off">
+              <div class="input-group mb-3">
+                <input id="name" type="text" class="form-control {{ errors.name ? 'form-error' : '' }}" name="name" placeholder="Full Name *" value="{{ old.name }}"/>
+              </div>
+              <div class="input-group mb-3">
+                <input id="email" type="text" class="form-control {{ errors.email ? 'form-error' : '' }}" name="email" placeholder="Email *" value="{{ old.email }}"/>
+              </div>
+              <div class="input-group mb-3">
+                <input id="username" type="text" class="form-control {{ errors.username ? 'form-error' : '' }}" name="username" placeholder="Username *" value="{{ old.username }}"/>
+              </div>
+              <div class="input-group mb-3">
+                <input id="password" type="password" class="form-control {{ errors.password ? 'form-error' : '' }}" name="password" placeholder="Password *" value=""/>
+              </div>
+              <div class="input-group mb-3">
+                <input id="password-confirm" type="password" class="form-control {{ errors.password ? 'form-error' : '' }}" name="password-confirm" placeholder="Re-type Password *" value=""/>
+              </div>
+              <button class="btn btn-success btn-block text-white btn-register-user mx-auto" type="submit">Register</button>
+              {{ csrf.field | raw }}
+            </form>
+          </div>
+        </div>
       </div>
     </div>
 {% endblock %}
