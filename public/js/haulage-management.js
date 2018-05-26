@@ -44,6 +44,8 @@
   });
 })(jQuery); // End of use strict
 
+
+
 // Call the dataTables jQuery plugin
 $(document).ready(function() {
   $('#hauliersTable').DataTable({
@@ -52,12 +54,16 @@ $(document).ready(function() {
       { "width" : "1%", "targets": 4},
     ]
   });
+
   $('#usersTable').DataTable({
     "columnDefs": [
       { "width" : "1%", "targets": 5},
     ]
   });
+
   $('#dataTable').DataTable();
+
+  $('.spinner').hide();
 });
 
 // Populate the delete confirmation modal with needed information from html tag
