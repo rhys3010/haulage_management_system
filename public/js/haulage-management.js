@@ -52,5 +52,22 @@ $(document).ready(function() {
       { "width" : "1%", "targets": 4},
     ]
   });
+  $('#usersTable').DataTable({
+    "columnDefs": [
+      { "width" : "1%", "targets": 5},
+    ]
+  });
   $('#dataTable').DataTable();
 });
+
+// Populate the delete confirmation modal with needed information from html tag
+function populateConfirmDeleteModal(button){
+
+  var id = button.dataset.id;
+  var name = button.dataset.name;
+  var actionPath = button.dataset.actionPath;
+
+  document.getElementById("confirmDeleteModalForm").action = actionPath;
+  document.getElementById("confirmDeleteModalInput").value = id;
+  document.getElementById("confirmDeleteModalLabel").innerHTML = 'Delete ' + name + '?';
+}

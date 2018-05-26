@@ -24,6 +24,18 @@ class AdminToolsController extends Controller {
 
     $this->container->view->render($response, 'register-user.twig');
   }
+
+  public function postRemoveUser($request, $response){
+
+    $user = User::find($request->getParam('id'));
+
+    // Check that user to be removed isnt an admin
+    if(!$user->admin){
+      $user = User::destroy($request->getParam('id'));
+    }
+
+    return $response->withRedirect($this->router->pathFor('admin.manage'));
+  }
 }
 
 ?>

@@ -52,7 +52,6 @@ class HauliersController extends Controller {
       $haulier = Haulier::destroy($request->getParam('id'));
     }
 
-
     return $response->withRedirect($this->router->pathFor('hauliers'));
   }
 
