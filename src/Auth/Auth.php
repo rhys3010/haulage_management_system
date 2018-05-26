@@ -25,6 +25,12 @@ class Auth{
   }
 
   public function check(){
+
+    // If the user cannot be found unset the session variable
+    if(!User::find($_SESSION['user'])){
+      unset($_SESSION['user']);
+    }
+
     if(isset($_SESSION['user'])){
       return isset($_SESSION['user']);
     }
