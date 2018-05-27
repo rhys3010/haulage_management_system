@@ -27,6 +27,23 @@ $container['logger'] = function($container){
   return $logger;
 };
 
+// Mailer Container
+$container['mailer'] = function($container){
+  $settings = $container['settings']['mail'];
+
+  $mailer = new PHPMailer\PHPMailer\PHPMailer(true);
+
+  $mailer->isSMTP();
+  $mailer->Host = $settings['host'];
+  $mailer->SMTPAuth = true;
+  $mailer->Username = $settings['username'];
+  $mailer->Password = $settings['password'];
+  $mailer->SMTPSecure = 'tls';
+  $mailer->Port = $settings['port'];
+
+  return $mailer;
+};
+
 // Database Container
 $container['db'] = function($container){
   // Eloquent Capsule Setup
@@ -105,6 +122,11 @@ $container['HauliersController'] = function($container){
 // Admin Tools Container
 $container['AdminToolsController'] = function($container){
   return new \App\Controllers\AdminToolsController($container);
+};
+
+// Feedback Container
+$container['FeedbackController'] = function($container){
+  return new \App\Controllers\FeedbackController($container);
 };
 
 // Validator Container

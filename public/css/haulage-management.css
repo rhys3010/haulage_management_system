@@ -112,7 +112,7 @@ body.fixed-nav {
 }
 
 .card-register-user {
-  max-width: 50%;
+  max-width: 35%;
 }
 
 .card-register-haulier .card-header {
@@ -121,10 +121,6 @@ body.fixed-nav {
 
 .btn-register-haulier {
   max-width: 25%;
-}
-
-.btn-register-user {
-  max-width: 50%;
 }
 
 .btn-remove {

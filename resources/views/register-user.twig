@@ -20,7 +20,6 @@
             <div {{ errors ? '' : 'hidden' }} class="alert alert-danger">
               {{ errors | first | first }}
             </div>
-
             <div {{ success ? '' : 'hidden' }} class="alert alert-success">
               {{ success }}
             </div>
@@ -40,7 +39,8 @@
               <div class="input-group mb-3">
                 <input id="password-confirm" type="password" class="form-control {{ errors.password ? 'form-error' : '' }}" name="password-confirm" placeholder="Re-type Password *" value=""/>
               </div>
-              <button class="btn btn-success btn-block text-white btn-register-user mx-auto" type="submit">Register</button>
+              <button class="btn btn-danger text-white mx-auto" type="reset">Cancel</button>
+              <button class="btn btn-success  text-white mx-auto" type="submit">Register</button>
               {{ csrf.field | raw }}
             </form>
           </div>

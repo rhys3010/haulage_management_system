@@ -1,0 +1,51 @@
+{% extends 'templates/app.twig' %}
+{% block content %}
+  {% include 'templates/partials/nav.twig' %}
+    <div class="content-wrapper">
+      <div class="container-fluid">
+        <!-- Breadcrumb -->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="{{ path_for('dashboard') }}">Dashboard</a>
+          </li>
+          <li class="breadcrumb-item active">Feedback</li>
+        </ol>
+        <!-- Submit Fedback Card -->
+        <div class="card mb-3 card-register-user mx-auto">
+          <div class="card-header">
+            <i class="fa fa-comments mx-2"></i>Feedback
+          </div>
+          <div class="card-body">
+            <div {{ errors ? '' : 'hidden' }} class="alert alert-danger">
+              {{ errors | first | first }}
+            </div>
+
+            <div {{ success ? '' : 'hidden' }} class="alert alert-success">
+              {{ success }}
+            </div>
+            <form action="{{ path_for('feedback.submit') }}" method="POST" autocomplete="off">
+              <div class="input-group mb-3">
+                <input id="subject" type="text" class="form-control {{ errors.name ? 'form-error' : '' }}" name="subject" placeholder="Subject *" value="{{ old.subject }}"/>
+              </div>
+              <div class="input-group mb-3">
+                <select id="feedback-type" name="feedback-type" class="form-control {{ errors.name ? 'form-error' : '' }}">
+                  <option value="default" selected disabled hidden>Select Feedback Type *</option>
+                  <option value="general-feedback" name="general-feedback">General Feedback</option>
+                  <option value="bug-report">Bug Report</option>
+                  <option value="feature-request">Feature Request</option>
+                  {% if auth.user.admin %}
+                    <option value="admin-request">Admin Account Request</option>
+                  {% endif %}
+                </select>
+              </div>
+              <div class="input-group mb-3">
+                <textarea id="message" name="message" class="form-control {{ errors.name ? 'form-error' : '' }}" placeholder="Message *" value="{{ old.message }}" rows="5"></textarea>
+              </div>
+              <button class="btn btn-success  text-white mx-auto" type="submit">Submit</button>
+              {{ csrf.field | raw }}
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

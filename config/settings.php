@@ -45,6 +45,13 @@ $settings['logger']['name'] = 'haulage_management_system';
 $settings['logger']['path'] = __DIR__ . '/../logs/haulage_management_system.log';
 $settings['logger']['level'] = \Monolog\Logger::INFO;
 
+// Mail Settings
+$settings['mail']['host'] = getenv("MAIL_HOST");
+$settings['mail']['port'] = (int)(getenv("MAIL_PORT"));
+$settings['mail']['username'] = getenv("MAIL_USERNAME");
+$settings['mail']['password'] = getenv("MAIL_PASSWORD");
+$settings['mail']['recipient'] = getenv("MAIL_RECIPIENT");
+
 return $settings;
 
 ?>

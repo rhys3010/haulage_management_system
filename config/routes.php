@@ -37,9 +37,13 @@ $app->group('', function(){
   $this->get('/auth/password/change', 'PasswordController:getChangePassword')->setName('auth.password.change');
   $this->post('/auth/password/change', 'PasswordController:postChangePassword');
 
-  // View, Add
+  // Hauliers View, Add
   $this->get('/hauliers', 'HauliersController:getHauliers')->setName('hauliers');
   $this->post('/hauliers/add', 'HauliersController:postAddHaulier')->setName('hauliers.add');
+
+  // Feedback Submission
+  $this->get('/feedback', 'FeedbackController:getFeedback')->setName('feedback');
+  $this->post('/feedback/submit', 'FeedbackController:postFeedback')->setName('feedback.submit');
 
 
 })->add(new AuthMiddleware($container));
