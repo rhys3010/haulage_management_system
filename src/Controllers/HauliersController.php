@@ -41,6 +41,9 @@ class HauliersController extends Controller {
       'name' => $request->getParam('name'),
     ]);
 
+    // Success Behaviour
+    $_SESSION['success'] = 'Haulier '. $haulier->short_name .' Created Successfully';
+
     return $response->withRedirect($this->router->pathFor('hauliers'));
 
   }

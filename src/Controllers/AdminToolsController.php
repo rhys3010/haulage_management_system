@@ -42,8 +42,8 @@ class AdminToolsController extends Controller {
 
     $validation = $this->validator->validate($request, [
       'name' => v::notEmpty()->length(2, 255),
-      'email' => v::notEmpty()->noWhitespace(),// Email Available
-      'username' => v::notEmpty()->noWhitespace(), // Username Available
+      'email' => v::notEmpty()->noWhitespace()->uniqueEmail(),
+      'username' => v::notEmpty()->noWhitespace()->uniqueUsername(),
       'password' => v::notEmpty()->passwordsMatch($request->getParam('password-confirm')),
     ]);
 
@@ -58,6 +58,10 @@ class AdminToolsController extends Controller {
       'name' => $request->getParam('name'),
       'email'=>$request->getParam('email'),
     ]);
+
+    // Success behaviour
+    $_SESSION['success'] = 'User ' . $user->username . ' Created Successfully';
+    unset($_SESSION['old']);
 
     return $response->withRedirect($this->router->pathFor('admin.register'));
   }

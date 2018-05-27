@@ -114,6 +114,9 @@ $app->add(new \App\Middleware\CsrfViewMiddleware($container));
 // Form Validation
 $app->add(new \App\Middleware\ValidationErrorsMiddleware($container));
 
+// Success Feedback Validation
+$app->add(new \App\Middleware\SuccessMessageMiddleware($container));
+
 $app->passwordChanged = false;
 
 // Register CSRF

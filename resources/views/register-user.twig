@@ -20,6 +20,10 @@
             <div {{ errors ? '' : 'hidden' }} class="alert alert-danger">
               {{ errors | first | first }}
             </div>
+
+            <div {{ success ? '' : 'hidden' }} class="alert alert-success">
+              {{ success }}
+            </div>
             <form action="{{ path_for('admin.user.add') }}" method="POST" autocomplete="off">
               <div class="input-group mb-3">
                 <input id="name" type="text" class="form-control {{ errors.name ? 'form-error' : '' }}" name="name" placeholder="Full Name *" value="{{ old.name }}"/>
