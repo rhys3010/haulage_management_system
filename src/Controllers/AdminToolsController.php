@@ -32,6 +32,11 @@ class AdminToolsController extends Controller {
 
     // Check that user to be removed isnt an admin
     if(!$user->admin){
+      // Enter Log
+      $logMessage = 'User ' . User::find($_SESSION['user'])->username . ' removed user: ' . User::find($request->getParam('id'))->username;
+      $this->container->logger->info($logMessage, array('ip' => $request->getAttribute('ip_address')));
+
+      // Remove user
       $user = User::destroy($request->getParam('id'));
     }
 
@@ -62,6 +67,10 @@ class AdminToolsController extends Controller {
     // Success behaviour
     $_SESSION['success'] = 'User ' . $user->username . ' Created Successfully';
     unset($_SESSION['old']);
+
+    // Enter Log
+    $logMessage = 'User ' . User::find($_SESSION['user'])->username . ' addded user: ' . $request->getParam('username');
+    $this->container->logger->info($logMessage, array('ip' => $request->getAttribute('ip_address')));
 
     return $response->withRedirect($this->router->pathFor('admin.register'));
   }

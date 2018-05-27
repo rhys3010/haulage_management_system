@@ -44,13 +44,21 @@ class HauliersController extends Controller {
     // Success Behaviour
     $_SESSION['success'] = 'Haulier '. $haulier->short_name .' Created Successfully';
 
-    return $response->withRedirect($this->router->pathFor('hauliers'));
+    // Enter Log
+    $logMessage = 'User ' . User::find($_SESSION['user'])->username . ' registered haulier: ' . $request->getParam('short_name');
+    $this->container->logger->info($logMessage, array('ip' => $request->getAttribute('ip_address')));
 
+    return $response->withRedirect($this->router->pathFor('hauliers'));
   }
 
   public function postRemoveHaulier($request, $response){
 
     if($this->container->auth->checkAdmin()){
+
+      // Enter Log
+      $logMessage = 'User ' . User::find($_SESSION['user'])->username . ' deleted haulier: ' . Haulier::find($request->getParam('id'))->short_name;
+      $this->container->logger->info($logMessage, array('ip' => $request->getAttribute('ip_address')));
+
       // Remove the haulier
       $haulier = Haulier::destroy($request->getParam('id'));
     }

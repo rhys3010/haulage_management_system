@@ -18,6 +18,15 @@ $container['auth'] = function($container){
   return new \App\Auth\Auth;
 };
 
+// Logger Container
+$container['logger'] = function($container){
+  $settings = $container['settings']['logger'];
+  $logger = new Monolog\Logger($settings['name']);
+  $logger->pushProcessor(new Monolog\Processor\UidProcessor());
+  $logger->pushHandler(new Monolog\Handler\RotatingFileHandler($settings['path'], 0, $settings['level'], false, 0644, true));
+  return $logger;
+};
+
 // Database Container
 $container['db'] = function($container){
   // Eloquent Capsule Setup
@@ -116,6 +125,9 @@ $app->add(new \App\Middleware\ValidationErrorsMiddleware($container));
 
 // Success Feedback Validation
 $app->add(new \App\Middleware\SuccessMessageMiddleware($container));
+
+// IP Middleware
+$app->add(new RKA\Middleware\IpAddress(true, ['10.0.0.1', '10.0.0.2']));
 
 $app->passwordChanged = false;
 

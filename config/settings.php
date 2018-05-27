@@ -40,6 +40,11 @@ $settings['db']['password']   = getenv("DB_PASSWORD");
 $settings['db']['charset']    = getenv("DB_CHARSET");
 $settings['db']['collation']  = getenv("DB_COLLATION");
 
+// Logger Settings
+$settings['logger']['name'] = 'haulage_management_system';
+$settings['logger']['path'] = __DIR__ . '/../logs/haulage_management_system.log';
+$settings['logger']['level'] = \Monolog\Logger::INFO;
+
 return $settings;
 
 ?>

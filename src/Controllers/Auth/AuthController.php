@@ -19,6 +19,12 @@ use Respect\Validation\Validator as v;
 class AuthController extends Controller {
 
   public function getSignOut($request, $response){
+
+    // Enter Log
+    $logMessage = 'User ' . User::find($_SESSION['user'])->username . ' logged out.';
+    $this->container->logger->info($logMessage, array('ip' => $request->getAttribute('ip_address')));
+
+    // Logout
     $this->auth->logout();
 
     return $response->withRedirect($this->router->pathFor('auth.signin'));
@@ -40,6 +46,10 @@ class AuthController extends Controller {
       $_SESSION['authError'] = 'Invalid username or password';
       return $response->withRedirect($this->router->pathFor('auth.signin'));
     }
+
+    // Enter Log
+    $logMessage = 'User ' . User::find($_SESSION['user'])->username . ' logged in';
+    $this->container->logger->info($logMessage, array('ip' => $request->getAttribute('ip_address')));
 
     return $response->withRedirect($this->router->pathFor('dashboard'));
 

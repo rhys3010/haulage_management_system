@@ -26,7 +26,7 @@ class PasswordController extends Controller{
       // Make sure current password is correct
       'passwordOld' => v::noWhitespace()->notEmpty()->correctPassword($this->auth->user()->password),
       // Make sure new passwords match
-      'passwordNew' => v::noWhitespace()->notEmpty()->passwordsMatch($request->getParam('passwordNewConfirm'))
+      'passwordNew' => v::noWhitespace()->notEmpty()->passwordsMatch($request->getParam('passwordNewConfirm'))->differentPassword($this->auth->user()->password),
     ]);
 
     if($validation->failed()){
@@ -35,6 +35,10 @@ class PasswordController extends Controller{
 
     // Change the password
     $this->auth->user()->setPassword($request->getParam('passwordNew'));
+
+    // Enter Log
+    $logMessage = 'User ' . User::find($_SESSION['user'])->username . ' changed their password';
+    $this->container->logger->info($logMessage, array('ip' => $request->getAttribute('ip_address')));
 
     $_SESSION['passwordSuccessModal'] = true;
 
