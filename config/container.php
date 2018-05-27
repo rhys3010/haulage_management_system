@@ -71,6 +71,16 @@ $container['view'] = function (Container $container) {
     return $twig;
 };
 
+// 404 Error Container
+// @Override
+$container['notFoundHandler'] = function($container){
+  return function($request, $response) use ($container){
+    return $container['view']->render($response->withStatus(404), '404.twig', [
+
+    ]);
+  };
+};
+
 
 // Login Container
 $container['AuthController'] = function($container){

@@ -50,3 +50,28 @@
     -webkit-transform: scaleY(1.0);
   }
 }
+
+.anim-truck{
+  color: $primary-color;
+  position: relative;
+  -webkit-animation: truck-anim 5s infinite; /* Safari 4.0 - 8.0 */
+  animation: truck-anim 5s infinite;
+}
+
+@-webkit-keyframes truck-anim{
+  from {right: -500px;}
+  to {right: 500px;}
+}
+
+@keyframes truck-anim{
+  from {right: -500px;}
+  to {right: 500px;}
+}
+
+.floor{
+  position: fixed;
+  margin-top: -5px;
+  width: 1000px;
+  height: 10px;
+  background-color: $gray-800;
+}

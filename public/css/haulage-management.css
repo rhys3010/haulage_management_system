@@ -131,6 +131,10 @@ body.fixed-nav {
   cursor: pointer;
 }
 
+.not-found-message {
+  font-size: 72px;
+}
+
 .spinner {
   margin: 100px auto;
   width: 50px;
@@ -186,6 +190,40 @@ body.fixed-nav {
     transform: scaleY(1);
     -webkit-transform: scaleY(1);
   }
+}
+
+.anim-truck {
+  color: #007bff;
+  position: relative;
+  -webkit-animation: truck-anim 5s infinite;
+  /* Safari 4.0 - 8.0 */
+  animation: truck-anim 5s infinite;
+}
+
+@-webkit-keyframes truck-anim {
+  from {
+    right: -500px;
+  }
+  to {
+    right: 500px;
+  }
+}
+
+@keyframes truck-anim {
+  from {
+    right: -500px;
+  }
+  to {
+    right: 500px;
+  }
+}
+
+.floor {
+  position: fixed;
+  margin-top: -5px;
+  width: 1000px;
+  height: 10px;
+  background-color: #343a40;
 }
 
 .form-control {
