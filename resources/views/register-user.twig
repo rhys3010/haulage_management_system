@@ -45,6 +45,24 @@
             </form>
           </div>
         </div>
+        <!-- Register Admin Card -->
+        <div class="card mb-3 card-register-user mx-auto">
+          <div class="card-header" data-toggle="collapse" data-target="#register-admin">
+            <i class="fa fa-info-circle mx-2"></i>Need to register a new admin?<i class="fa fa-sort-down pull-right"></i>
+          </div>
+          <div class="collapse" id="register-admin">
+            <div class="card-body">
+              <p>To register a new Admin, submit a feedback form by clicking the button below. Be sure to select 'Admin Account Request' as feedback type and provide the following information in your form:</p>
+              <p>Username</p>
+              <p>Full Name</p>
+              <p>Email</p>
+
+              <div class="mx-auto text-center">
+                <a class="btn btn-primary" href="{{ path_for('feedback') }}">Feedback Form</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 {% endblock %}

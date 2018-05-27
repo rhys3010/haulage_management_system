@@ -115,6 +115,10 @@ body.fixed-nav {
   max-width: 35%;
 }
 
+.card-register-user .card-header {
+  cursor: pointer;
+}
+
 .card-register-haulier .card-header {
   cursor: pointer;
 }
@@ -230,7 +234,7 @@ body.fixed-nav {
   right: 500px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .anim-truck {
     visibility: hidden;
   }
