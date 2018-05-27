@@ -75,3 +75,25 @@
   height: 10px;
   background-color: $gray-800;
 }
+
+.wall{
+  margin-top: -50px;
+  width: 10px;
+  height: 50px;
+  background-color: red;
+  right: 500px;
+}
+
+@media (max-width: 900px) {
+  .anim-truck{
+    visibility: hidden;
+  }
+
+  .floor{
+    visibility: hidden;
+  }
+
+  .wall{
+    visibility: hidden;
+  }
+}
