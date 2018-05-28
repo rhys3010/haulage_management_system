@@ -19,48 +19,29 @@
           <a class="btn btn-primary mx-3" href="#" role="button">Changelog</a>
         </p>
       </div>
-    </div>
-    <div class="container-fluid">
-      <div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-user mx-2"></i>Registered Users
+      <div class="row">
+        <div class="col">
+          <div class="card mb-3 hauliers-chart-card">
+            <div class="card-header">
+              <i class="fa fa-pie-chart mx-2"></i>Most Active Hauliers
+            </div>
+            <div class="card-body">
+              <canvas id="hauliersPieChart"></canvas>
+            </div>
+          </div>
         </div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Name</th>
-                  <th>Username</th>
-                  <th>Class</th>
-                  <th>Date Registered</th>
-                </tr>
-              </thead>
-              <tfoot>
-                <tr>
-                  <th>ID</th>
-                  <th>Name</th>
-                  <th>Username</th>
-                  <th>Class</th>
-                  <th>Date Registered</th>
-                </tr>
-              </tfoot>
-              <tbody>
-                {% for user in auth.users %}
-                  <tr>
-                    <td>{{ user.id }}</td>
-                    <td>{{ user.name }}</td>
-                    <td>{{ user.username }}</td>
-                    <td>{{ user.admin ? 'Admin' : 'User' }}</td>
-                    <td>{{ user.created_at }}</td>
-                  </tr>
-                {% endfor %}
-              </tbody>
-            </table>
+        <div class="col">
+          <div class="card mb-3 journeys-chart-card">
+            <div class="card-header">
+              <i class="fa fa-area-chart mx-2"></i>Daily Logged Journeys
+            </div>
+            <div class="card-body">
+              <canvas id="journeysChart"></canvas>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 {% endblock %}
