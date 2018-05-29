@@ -12,7 +12,7 @@
       <div class="jumbotron">
         <h1 class="display-5">Welcome, {{ auth.user.name | split(' ')[0] }}!</h1>
         <p class="lead">This system is designed to keep record of registered hauliers and their journeys. Please note that this software is still in development, therefore you may experience some issues or unexpected behaviour, if you encounter any of these issues please report them using the feedback link below.</p>
-        <hr class="my-4">
+        <hr class="my-2">
         <p></p>
         <p class="lead">
           <a class="btn btn-primary" href="{{ path_for('feedback') }}" role="button">Feedback</a>
@@ -21,22 +21,12 @@
       </div>
       <div class="row">
         <div class="col">
-          <div class="card mb-3 hauliers-chart-card">
-            <div class="card-header">
-              <i class="fa fa-pie-chart mx-2"></i>Most Active Hauliers
-            </div>
-            <div class="card-body">
-              <canvas id="hauliersPieChart"></canvas>
-            </div>
-          </div>
-        </div>
-        <div class="col">
           <div class="card mb-3 journeys-chart-card">
             <div class="card-header">
               <i class="fa fa-area-chart mx-2"></i>Daily Logged Journeys
             </div>
             <div class="card-body">
-              <canvas id="journeysChart"></canvas>
+              <canvas id="journeysChart" height="50"></canvas>
             </div>
           </div>
         </div>

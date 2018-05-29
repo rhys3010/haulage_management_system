@@ -66,6 +66,8 @@ $container['view'] = function (Container $container) {
         'cache' => $settings['twig']['cache_enabled'] ? $settings['twig']['cache_path'] : false
     ]);
 
+    $twig->getEnvironment()->addGlobal('route',[
+    ]);
 
     // Give view access to auth controller
     $twig->getEnvironment()->addGlobal('auth',[
@@ -160,6 +162,9 @@ $app->add(new \App\Middleware\SuccessMessageMiddleware($container));
 
 // IP Middleware
 $app->add(new RKA\Middleware\IpAddress(true, ['10.0.0.1', '10.0.0.2']));
+
+// Route Validation
+$app->add(new \App\Middleware\RouteMiddleware($container));
 
 $app->passwordChanged = false;
 

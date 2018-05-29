@@ -1,14 +1,4 @@
-var ctx = document.getElementById("hauliersPieChart");
-var myPieChart = new Chart(ctx, {
-  type: 'pie',
-  data: {
-    labels: ["SJTL", "KNO", "DHLNE", "KAM"],
-    datasets: [{
-      data: [51, 29, 40, 34],
-      backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745'],
-    }],
-  },
-});
+
 
 var ctx = document.getElementById("journeysChart");
 var myLineChart = new Chart(ctx, {

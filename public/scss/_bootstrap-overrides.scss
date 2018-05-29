@@ -8,3 +8,17 @@
 .dropdown-menu{
   background-color: $gray-800 !important;
 }
+
+.btn-primary{
+  background-color: $primary-color;
+  border-color: $primary-color !important;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+a, a:hover{
+  color: $primary-color;
+}
