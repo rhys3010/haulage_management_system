@@ -1,5 +1,3 @@
-
-
 var ctx = document.getElementById("journeysChart");
 var myLineChart = new Chart(ctx, {
   type: 'line',

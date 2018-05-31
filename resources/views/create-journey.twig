@@ -11,36 +11,39 @@
             <li class="breadcrumb-item active">Log a Journey</li>
           </ol>
           <!-- Create Journey Card -->
-          <div class="card mb-3 card-register-user mx-auto">
+          <div class="card mb-3 mx-auto">
             <div class="card-header">
               <i class="fa fa-fw fa-table mx-2"></i>Log a New Journey
             </div>
             <div class="card-body">
+              <form class="form-inline" action="" method="POST" autocomplete="off">
+                <div class="form-group">
+                  <label for="source" class="mx-3">Source (e.g. "SY")</label>
+                  <input id="source" type="text"class="form-control" name="source"  value="" size="2" maxlength="2"/>
+                </div>
+                <div class="form-group">
+                  <label for="destination" class="mx-3">Destination (e.g. "LL")</label>
+                  <input id="destination" type="text" class="form-control" name="destination" value="" size="2" maxlength="2"/>
+                </div>
+                <div class="form-group">
+                  <label for="haulier" class="mx-3">Haulier</label>
+                  <input id="haulier" type="text" class="form-control" name="haulier" value=""/>
+                </div>
+                <div class="form-group">
+                  <label for="haulier" class="mx-3">Date & Time</label>
+                  <input id="datetime" type="datetime-local" class="form-control" name="datetime" value="" style="width:220px;"/>
+                </div>
+                <div class="form-group mx-3">
+                  <button class="btn btn-success  text-white mx-1" type="submit">Log Journey</button>
+                </div>
+                {{ csrf.field | raw }}
+              </form>
               <div {{ errors ? '' : 'hidden' }} class="alert alert-danger">
                 {{ errors | first | first }}
               </div>
               <div {{ success ? '' : 'hidden' }} class="alert alert-success">
                 {{ success }}
               </div>
-
-              <form action="" method="POST" autocomplete="off">
-                <div class="input-group mb-3">
-                  <input id="source" type="text" class="form-control" name="source" placeholder="Journey Source" value=""/>
-                </div>
-                <div class="input-group mb-3">
-                  <input id="destination" type="text" class="form-control" name="destination" placeholder="Journey Destination" value=""/>
-                </div>
-                <div class="input-group mb-3">
-                  <input id="haulier" type="text" class="form-control" name="haulier" placeholder="Haulier" value=""/>
-                </div>
-                <div class="input-group mb-3">
-                  <input id="datetime" type="text" class="form-control" name="datetime" placeholder="Journey Time" value=""/>
-                </div>
-                <button class="btn btn-danger text-white mx-auto" type="reset">Cancel</button>
-                <button class="btn btn-success  text-white mx-auto" type="submit">Create</button>
-                {{ csrf.field | raw }}
-              </form>
-            </div>
           </div>
         </div>
       </div>

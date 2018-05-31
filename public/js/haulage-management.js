@@ -44,10 +44,9 @@
   });
 })(jQuery); // End of use strict
 
-
-
 // Call the dataTables jQuery plugin
 $(document).ready(function() {
+
   $('#hauliersTable').DataTable({
     "columnDefs": [
       { "width" : "10%", "targets": 3 },
