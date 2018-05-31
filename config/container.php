@@ -131,6 +131,11 @@ $container['FeedbackController'] = function($container){
   return new \App\Controllers\FeedbackController($container);
 };
 
+// Create Journey Container
+$container['JourneyController'] = function($container){
+  return new \App\Controllers\JourneyController($container);
+};
+
 // Validator Container
 $container['validator'] = function($container){
   return new App\Validation\Validator;
