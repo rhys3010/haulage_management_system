@@ -149,6 +149,18 @@ body.fixed-nav {
   color: #fff;
 }
 
+.card-create-journey {
+  max-width: 40%;
+}
+
+.location-input {
+  width: 14em;
+}
+
+.haulier-input {
+  width: 14em;
+}
+
 .spinner {
   margin: 100px auto;
   width: 50px;
@@ -282,6 +294,10 @@ body.fixed-nav {
 
 a, a:hover {
   color: #336699;
+}
+
+.text-primary {
+  color: #336699 !important;
 }
 
 #mainNav .user-dropdown,

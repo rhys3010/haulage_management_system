@@ -69,6 +69,8 @@ $container['view'] = function (Container $container) {
     $twig->getEnvironment()->addGlobal('route',[
     ]);
 
+    // TODO: Move these to middleware
+
     // Give view access to auth controller
     $twig->getEnvironment()->addGlobal('auth',[
       'check' => $container->auth->check(),
@@ -80,6 +82,11 @@ $container['view'] = function (Container $container) {
     // Give view access to Hauliers Controller
     $twig->getEnvironment()->addGlobal('haulier', [
       'all' => $container->HauliersController->all(),
+    ]);
+
+    // Give view access to Locations Controller
+    $twig->getEnvironment()->addGlobal('location', [
+      'all' => $container->LocationsController->all(),
     ]);
 
     // Instantiate and add Slim specific extension
@@ -134,6 +141,11 @@ $container['FeedbackController'] = function($container){
 // Create Journey Container
 $container['JourneyController'] = function($container){
   return new \App\Controllers\JourneyController($container);
+};
+
+// Create Locations Container
+$container['LocationsController'] = function($container){
+  return new \App\Controllers\LocationsController($container);
 };
 
 // Validator Container
