@@ -65,14 +65,21 @@ $(document).ready(function() {
   $('.spinner').hide();
 });
 
-// Populate the delete confirmation modal with needed information from html tag
-function populateConfirmDeleteModal(button){
+// Force correct submission ID on forms
+$('input[list]').on('input', function(e) {
+    var $input = $(e.target),
+        $options = $('#' + $input.attr('list') + ' option'),
+        $hiddenInput = $('#' + $input.attr('id') + '-hidden'),
+        label = $input.val();
 
-  var id = button.dataset.id;
-  var name = button.dataset.name;
-  var actionPath = button.dataset.actionPath;
+    $hiddenInput.val(label);
 
-  document.getElementById("confirmDeleteModalForm").action = actionPath;
-  document.getElementById("confirmDeleteModalInput").value = id;
-  document.getElementById("confirmDeleteModalLabel").innerHTML = 'Delete ' + name + '?';
-}
+    for(var i = 0; i < $options.length; i++) {
+        var $option = $options.eq(i);
+
+        if($option.text() === label) {
+            $hiddenInput.val( $option.attr('data-value') );
+            break;
+        }
+    }
+});

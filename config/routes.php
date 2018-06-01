@@ -46,7 +46,8 @@ $app->group('', function(){
   $this->post('/feedback/submit', 'FeedbackController:postFeedback')->setName('feedback.submit');
 
   // Create Journey
-  $this->get('/journey/add', 'JourneyController:getCreateJourney')->setName('journey.add');
+  $this->get('/journeys/add', 'JourneyController:getCreateJourney')->setName('journeys.add');
+  $this->post('/journeys/add', 'JourneyController:postCreateJourney');
 
 
 })->add(new AuthMiddleware($container));

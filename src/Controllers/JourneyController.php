@@ -17,6 +17,21 @@ class JourneyController extends Controller {
   public function getCreateJourney($request, $response){
     $this->container->view->render($response, 'create-journey.twig');
   }
+
+  public function postCreateJourney($request, $response){
+
+    $validation = $this->validator->validate($request, [
+      // Valid Location
+      'source' => v::notEmpty(),
+      'destination' => v::notEmpty(),
+      // Haulier exists
+      'haulier' => v::notEmpty(),
+      // Future?
+      'datetime' => v::notEmpty(),
+    ]);
+
+    return $response->withRedirect($this->router->pathFor('journeys.add'));
+  }
 }
 
 ?>
