@@ -1,0 +1,22 @@
+{% extends 'templates/app.twig' %}
+{% block content %}
+  {% include 'templates/partials/nav.twig' %}
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumb -->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="{{ path_for('dashboard') }}">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">View Journey</li>
+        <li class="breadcrumb-item active">#{{ journey.journey.id }}</li>
+      </ol>
+      <!-- DEBUG -->
+      <p>ID: {{ journey.journey.id }}</p>
+      <p>SOURCE: {{ journey.journey.source }} ({{ journey.sourceName }})</p>
+      <p>DESTINATION: {{ journey.journey.destination }} ({{ journey.destName }})</p>
+      <p>HAULIER: <a href="{{ path_for('hauliers') }}?search={{ journey.haulierName }}">{{ journey.haulierName }}</a></p>
+      <p>DATETIME: {{ journey.journey.datetime }}</p>
+    </div>
+  </div>
+{% endblock %}

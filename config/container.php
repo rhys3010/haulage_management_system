@@ -89,6 +89,7 @@ $container['view'] = function (Container $container) {
       'all' => $container->LocationsController->all(),
     ]);
 
+
     // Instantiate and add Slim specific extension
     $router = $container->get('router');
     $uri = \Slim\Http\Uri::createFromEnvironment($container->get('environment'));

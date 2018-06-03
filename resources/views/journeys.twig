@@ -1,0 +1,47 @@
+{% extends 'templates/app.twig' %}
+{% block content %}
+  {% include 'templates/partials/nav.twig' %}
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumb -->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="{{ path_for('dashboard') }}">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">View Journeys</li>
+      </ol>
+      <!-- Journeys Table -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-fw fa-truck mx-2"></i>Logged Journeys
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="journeysTable" width="100$" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Source</th>
+                  <th>Destination</th>
+                  <th>Haulier</th>
+                  <th>Date & Time</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>ID</th>
+                  <th>Source</th>
+                  <th>Destination</th>
+                  <th>Haulier</th>
+                  <th>Date & Time</th>
+                  <th></th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

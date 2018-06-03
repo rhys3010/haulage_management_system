@@ -49,6 +49,11 @@ $app->group('', function(){
   $this->get('/journeys/add', 'JourneyController:getCreateJourney')->setName('journeys.add');
   $this->post('/journeys/add', 'JourneyController:postCreateJourney');
 
+  // View journeys
+  $this->get('/journeys/view', 'JourneyController:getViewJourneys')->setName('journeys.view');
+  $this->get('/journeys/view/data', 'JourneyController:getData')->setName('journeys.view.data');
+  $this->get('/journeys/view/{id}', 'JourneyController:getViewIndividualJourney');
+
 
 })->add(new AuthMiddleware($container));
 

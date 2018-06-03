@@ -76,7 +76,7 @@
                     <td>{{ haulier.short_name }}</td>
                     <td>{{ haulier.name }}</td>
                     <td>{{ haulier.created_at }}</td>
-                    <td class="text-center"><button class="btn btn-primary btn-sm">View Journeys</button></td>
+                    <td class="text-center"><a class="btn btn-primary btn-sm text-white" href="{{ path_for('journeys.view') }}?search={{ haulier.short_name }}">View Journeys</a></td>
                     <td class="text-center">
                       {% if auth.user.admin %}
                         <button class="btn-remove" type="button" data-toggle="modal" rel="tooltip" data-id="{{ haulier.id }}" data-name="{{ haulier.name }}" data-action-path="{{ path_for('hauliers.remove') }}" data-target="#confirmDeleteModal" data-placement="right" title="Delete User" onclick="populateConfirmDeleteModal(this)"><i class="fa fa-trash text-danger"></i></button>

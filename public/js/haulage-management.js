@@ -44,26 +44,6 @@
   });
 })(jQuery); // End of use strict
 
-// Call the dataTables jQuery plugin
-$(document).ready(function() {
-
-  $('#hauliersTable').DataTable({
-    "columnDefs": [
-      { "width" : "10%", "targets": 3 },
-      { "width" : "1%", "targets": 4},
-    ]
-  });
-
-  $('#usersTable').DataTable({
-    "columnDefs": [
-      { "width" : "1%", "targets": 5},
-    ]
-  });
-
-  $('#dataTable').DataTable();
-
-  $('.spinner').hide();
-});
 
 // Force correct submission ID on forms
 $('input[list]').on('input', function(e) {
@@ -83,3 +63,15 @@ $('input[list]').on('input', function(e) {
         }
     }
 });
+
+// Populate the delete confirmation modal with needed information from html tag
+function populateConfirmDeleteModal(button){
+
+  var id = button.dataset.id;
+  var name = button.dataset.name;
+  var actionPath = button.dataset.actionPath;
+
+  document.getElementById("confirmDeleteModalForm").action = actionPath;
+  document.getElementById("confirmDeleteModalInput").value = id;
+  document.getElementById("confirmDeleteModalLabel").innerHTML = 'Delete ' + name + '?';
+}
