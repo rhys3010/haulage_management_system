@@ -30,7 +30,7 @@ $(document).ready(function() {
     ]
   });
 
-  $('#journeysTable').DataTable({
+  var journeysTable = $('#journeysTable').DataTable({
     "ajax": "/journeys/view/data",
     "search": {
       "search": getSearchParam()['search']
@@ -39,11 +39,15 @@ $(document).ready(function() {
       "targets": -1,
       "width": "1%",
       "data": null,
-      "defaultContent": "<a class='btn btn-primary btn-sm' href='/dashboard'>View</a>",
+      "defaultContent": "<a class='btn btn-primary btn-sm text-white'>View Journey</a>",
     }]
   });
 
-  $('#dataTable').DataTable();
+  $('#journeysTable tbody').on('click', 'a', function(){
+    var data = journeysTable.row($(this).parents('tr')).data();
+    document.location.href = '/journeys/view/'+data[0];
+
+  });
 
   $('.spinner').hide();
 });
