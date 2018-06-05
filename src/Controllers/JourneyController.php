@@ -102,6 +102,20 @@ class JourneyController extends Controller {
     return $response->withRedirect($this->router->pathFor('journeys.add'));
   }
 
+  public function postRemoveJourney($request, $response){
+
+    if($this->container->auth->checkAdmin()){
+      // Enter Log
+      $logMessage = 'User ' . User::find($_SESSION['user'])->username . ' deleted journey: #' . Journey::find($request->getParam('id'))->id;
+      $this->container->logger->info($logMessage, array('ip' => $request->getAttribute('ip_address')));
+
+      // Remove the journey
+      $journey = Journey::destroy($request->getParam('id'));
+    }
+
+    return $response->withRedirect($this->router->pathFor('journeys.view'));
+  }
+
 }
 
 ?>

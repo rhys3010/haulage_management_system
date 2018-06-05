@@ -40,7 +40,7 @@ $(document).ready(function() {
       "targets": -1,
       "width": "1%",
       "data": null,
-      "defaultContent": "<a class='btn btn-primary btn-sm text-white'>View Journey</a>",
+      "defaultContent": "<a class='btn btn-primary btn-sm text-white'>Details</a>",
     }]
   });
 

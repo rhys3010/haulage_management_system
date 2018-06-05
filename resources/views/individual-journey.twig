@@ -21,6 +21,10 @@
               <i class="fa fa-fw fa-truck mx-2"></i>Journey Info
             </div>
             <div class="card-body">
+              <h3 class="pull-left">Journey #{{ journey.journey.id }}</h3>
+              {% if auth.user.admin %}
+                <button class="btn btn-danger btn-sm text-white my-2 pull-right" data-toggle="modal" data-id="{{ journey.journey.id }}" data-name="Journey #{{ journey.journey.id }}" data-action-path="{{ path_for('journeys.remove') }}" data-target="#confirmDeleteModal" onclick="populateConfirmDeleteModal(this)">Delete</button>
+              {% endif %}
               <table class="table">
                 <tbody>
                   <tr>
