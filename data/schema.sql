@@ -22,30 +22,6 @@ CREATE TABLE `hauliers` (
 
 
 --
--- Table structure for table `journeys`
---
-
-DROP TABLE IF EXISTS `journeys`;
-CREATE TABLE `journeys` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `source` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
-  `destination` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
-  `haulier` int(11) unsigned NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
-  KEY `destination_idx` (`destination`),
-  KEY `source_idx` (`source`),
-  KEY `haulier_idx` (`haulier`),
-  CONSTRAINT `destination` FOREIGN KEY (`destination`) REFERENCES `locations` (`area_code`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  CONSTRAINT `haulier` FOREIGN KEY (`haulier`) REFERENCES `hauliers` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  CONSTRAINT `source` FOREIGN KEY (`source`) REFERENCES `locations` (`area_code`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-
---
 -- Table structure for table `locations`
 --
 
@@ -76,3 +52,26 @@ CREATE TABLE `users` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `idx_users_username_password_name_email` (`username`,`password`,`name`,`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2028 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Table structure for table `journeys`
+--
+
+DROP TABLE IF EXISTS `journeys`;
+CREATE TABLE `journeys` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `source` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  `destination` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  `haulier` int(11) unsigned NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  KEY `destination_idx` (`destination`),
+  KEY `source_idx` (`source`),
+  KEY `haulier_idx` (`haulier`),
+  CONSTRAINT `destination` FOREIGN KEY (`destination`) REFERENCES `locations` (`area_code`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `haulier` FOREIGN KEY (`haulier`) REFERENCES `hauliers` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `source` FOREIGN KEY (`source`) REFERENCES `locations` (`area_code`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
