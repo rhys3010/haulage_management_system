@@ -18,6 +18,7 @@ class MetaMiddleware extends Middleware{
 
     // Get version number from config
     $meta['version'] = $this->container->get('settings')['version'];
+    $meta['googleAPI'] = $this->container->get('settings')['googleAPI'];
 
     // Set meta info environment variable and push to twig
     $_SESSION['meta'] = $meta;
