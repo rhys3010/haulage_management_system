@@ -31,6 +31,7 @@ $(document).ready(function() {
   });
 
   var journeysTable = $('#journeysTable').DataTable({
+    "order": [[ 4, 'desc' ]],
     "ajax": "/journeys/view/data",
     "search": {
       "search": getSearchParam()['search']
