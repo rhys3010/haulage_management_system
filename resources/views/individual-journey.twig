@@ -13,11 +13,51 @@
         </li>
         <li class="breadcrumb-item active">#{{ journey.journey.id }}</li>
       </ol>
-      <!-- DEBUG -->
-      <p>ID: {{ journey.journey.id }}</p>
-      <p>ROUTE: {{ journey.journey.source }} ({{ journey.sourceName }}) &rarr; {{ journey.journey.destination }} ({{ journey.destName }})</p>
-      <p>HAULIER: <a href="{{ path_for('hauliers') }}?search={{ journey.haulierName }}">{{ journey.haulierName }}</a></p>
-      <p>DATETIME: {{ journey.journey.datetime }}</p>
+      <!-- Info Box -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fa fa-fw fa-truck mx-2"></i>Journey Info
+            </div>
+            <div class="card-body">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <th>ID</th>
+                    <th class="text-muted">{{ journey.journey.id }}</th>
+                  </tr>
+                  <tr>
+                    <th>Route</th>
+                    <th class="text-muted">{{ journey.journey.source }} ({{ journey.sourceName }}) &rarr; {{ journey.journey.destination }} ({{ journey.destName }})</th>
+                  </tr>
+                  <tr>
+                    <th>Haulier</th>
+                    <th class="text-muted"><a href="{{ path_for('hauliers') }}?search={{ journey.haulierName }}">{{ journey.haulierName }}</a></th>
+                  </tr>
+                  <tr>
+                    <th>Date & Time</th>
+                    <th class="text-muted">{{ journey.journey.datetime }}</th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="card-footer small">
+              Logged at {{ journey.journey.created_at }}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fa fa-map mx-2"></i>Map View
+            </div>
+            <div class="card-body" style="height: 500px; display: flex; justify-content: center; align-items: center;">
+              <h1 class="text-muted">MAP COMING SOON</h1>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 {% endblock %}
