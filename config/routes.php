@@ -51,8 +51,11 @@ $app->group('', function(){
 
   // View journeys
   $this->get('/journeys/view', 'JourneyController:getViewJourneys')->setName('journeys.view');
-  $this->get('/journeys/view/data', 'JourneyController:getData')->setName('journeys.view.data');
   $this->get('/journeys/view/{id}', 'JourneyController:getViewIndividualJourney');
+
+  // Journey Data
+  $this->get('/journeys/allJourneysData', 'JourneyController:getAllJourneysData')->setName('journeys.allJourneysData');
+  $this->get('/journeys/dailyJourneysData', 'JourneyController:getDailyLoggedJourneys')->setName('journeys.dailyJourneysData');
 
 
 })->add(new AuthMiddleware($container));

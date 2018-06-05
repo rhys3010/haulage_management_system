@@ -9,6 +9,7 @@
 
 namespace App\Controllers;
 
+use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Journey;
 use App\Models\Location;
@@ -40,7 +41,7 @@ class JourneyController extends Controller {
   }
 
   // Get the journeys from SQL
-  public function getData($request, $response){
+  public function getAllJourneysData($request, $response){
     // Get all journeys
     $journeys = Journey::get();
     $data_output = array();
@@ -114,6 +115,24 @@ class JourneyController extends Controller {
     }
 
     return $response->withRedirect($this->router->pathFor('journeys.view'));
+  }
+
+  public function getDailyLoggedJourneys($request, $response){
+
+    $data_output = array();
+
+    for($i = 7; $i >= 0; $i--){
+      $date = Carbon::now()->subDay($i)->format('d F');
+      $noJourneys = Journey::whereRaw('date(created_at) = ?', [Carbon::today()->subDays($i)])->count();
+
+      array_push($data_output, array(
+        'date' => $date,
+        'noJourneys' => $noJourneys
+      ));
+
+    }
+    // Return AJAX
+    return json_encode($data_output);
   }
 
 }

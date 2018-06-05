@@ -32,7 +32,7 @@ $(document).ready(function() {
 
   var journeysTable = $('#journeysTable').DataTable({
     "order": [[ 4, 'desc' ]],
-    "ajax": "/journeys/view/data",
+    "ajax": "/journeys/allJourneysData",
     "search": {
       "search": getSearchParam()['search']
     },
