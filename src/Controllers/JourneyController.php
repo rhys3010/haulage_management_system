@@ -44,6 +44,11 @@ class JourneyController extends Controller {
 
     $journey = Journey::find($args['id']);
 
+    // If journey doesn't exist throw 404 error.
+    if(!$journey){
+      throw new \Slim\Exception\NotFoundException($request, $response);
+    }
+
     // Pass the journey data to the twig view
     $data = array (
       'journey' => array(
