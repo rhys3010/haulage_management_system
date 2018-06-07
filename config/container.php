@@ -166,6 +166,11 @@ $container['LocationsController'] = function($container){
   return new \App\Controllers\LocationsController($container);
 };
 
+// Create Changelog Controller Container
+$container['ChangelogController'] = function($container){
+  return new \App\Controllers\ChangelogController($container);
+};
+
 // Validator Controller Container
 $container['validator'] = function($container){
   return new App\Validation\Validator;

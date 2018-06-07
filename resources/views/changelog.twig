@@ -1,0 +1,28 @@
+{% extends 'templates/app.twig' %}
+{% block title %}Changelog{% endblock %}
+{% block content %}
+  {% include 'templates/partials/nav.twig' %}
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="{{ path_for('dashboard') }}">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Changelog</li>
+      </ol>
+      <h1>v0.0.2</h2>
+        <ul class="text-muted">
+          <li>7/6/2018</li>
+          <li>[Update] Added changelog</li>
+          <li>[Update] Added favicon to all pages</li>
+          <li>[Update] Added dynamic titles to all pages</li>
+          <li>[Bug Fix] Empty journey views now trigger a 404 error</li>
+        </ul>
+      <h1>v0.0.1</h1>
+      <ul class="text-muted">
+        <li>5/6/2018</li>
+        <li>Initial Release</li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}

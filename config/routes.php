@@ -66,6 +66,9 @@ $app->group('', function(){
   $this->get('/journeys/allJourneysData', 'JourneyController:getAllJourneysData')->setName('journeys.allJourneysData');
   $this->get('/journeys/dailyJourneysData', 'JourneyController:getDailyLoggedJourneys')->setName('journeys.dailyJourneysData');
 
+  // Changelog
+  $this->get('/changelog', 'ChangelogController:getChangelog')->setName('changelog');
+
 
 })->add(new AuthMiddleware($container));
 
