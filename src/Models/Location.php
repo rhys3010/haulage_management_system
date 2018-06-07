@@ -1,11 +1,17 @@
 <?php
 /**
-  * Haulage Management System - The Location Model
+  * Haulage Management System - Location.php
   *
-  * @author Rhys Evans
-  * @version 29/05/2018
-  * 2018 (C) Rhys Evans
-*/
+  * Eloquent model for the Locations table in the database
+  *
+  * PHP Version 7
+  *
+  * 2018 (c) Rhys Evans <rhys301097@gmail.com>
+  *
+  * @license http://www.php.net/license/3_01.txt  PHP License 3.01
+  * @author Rhys Evans <rhys301097@gmail.com>
+  * @version 0.1
+  */
 
 namespace App\Models;
 

@@ -1,19 +1,22 @@
 <?php
 /**
-  * Haulage Management System - The User Model
+  * Haulage Management System - User.php
   *
-  * @author Rhys Evans
-  * @version 21/05/2018
-  * 2018 (C) Rhys Evans
-*/
+  * Eloquent model for the Users table in the database
+  *
+  * PHP Version 7
+  *
+  * 2018 (c) Rhys Evans <rhys301097@gmail.com>
+  *
+  * @license http://www.php.net/license/3_01.txt  PHP License 3.01
+  * @author Rhys Evans <rhys301097@gmail.com>
+  * @version 0.1
+  */
 
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-/**
-  * User Class - An Eloquent class to represent the 'users' relation in the database
-*/
 class User extends Model{
 
   // The SQL table this model refers to

@@ -1,11 +1,17 @@
 <?php
 /**
-  * Haulage Management System - Location Exists Validator
+  * Haulage Management System - LocationExists.php
   *
-  * @author Rhys Evans
-  * @version 03/06/2018
-  * 2018 (C) Rhys Evans
-*/
+  * Validation rule to verify that the location being inputted exists in the database
+  *
+  * PHP Version 7
+  *
+  * 2018 (c) Rhys Evans <rhys301097@gmail.com>
+  *
+  * @license http://www.php.net/license/3_01.txt  PHP License 3.01
+  * @author Rhys Evans <rhys301097@gmail.com>
+  * @version 0.1
+  */
 
 namespace App\Validation\Rules;
 
@@ -14,6 +20,10 @@ use Respect\Validation\Rules\AbstractRule;
 
 class LocationExists extends AbstractRule{
 
+  /**
+    * Check that the location being entered exists within the database
+    * @param input - The form input to be validated
+  */
   public function validate($input){
 
     // Check if location exists

@@ -1,11 +1,18 @@
 <?php
 /**
-  * Haulage Management System - Unique Username Exception
+  * Haulage Management System - UniqueUsernameException.php
   *
-  * @author Rhys Evans
-  * @version 27/05/2018
-  * 2018 (C) Rhys Evans
-*/
+  * Validation exception to handle the UniqueUsername rule
+  *
+  * PHP Version 7
+  *
+  * 2018 (c) Rhys Evans <rhys301097@gmail.com>
+  *
+  * @license http://www.php.net/license/3_01.txt  PHP License 3.01
+  * @author Rhys Evans <rhys301097@gmail.com>
+  * @version 0.1
+  * @see UniqueUsername.php
+  */
 
 namespace App\Validation\Exceptions;
 

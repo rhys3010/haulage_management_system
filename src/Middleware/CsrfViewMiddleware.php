@@ -1,16 +1,28 @@
 <?php
 /**
-  * Haulage Management System - CSRF View Middleware
+  * Haulage Management System - CsrfViewMiddleware.php
   *
-  * @author Rhys Evans
-  * @version 23/05/2018
-  * 2018 (C) Rhys Evans
-*/
+  * Middleware to pass csrf input fields.
+  *
+  * PHP Version 7
+  *
+  * 2018 (c) Rhys Evans <rhys301097@gmail.com>
+  *
+  * @license http://www.php.net/license/3_01.txt  PHP License 3.01
+  * @author Rhys Evans <rhys301097@gmail.com>
+  * @version 0.1
+  */
 
 namespace App\Middleware;
 
 class CsrfViewMiddleware extends Middleware{
 
+  /**
+    * Pass the csrf html input forms to the twig view as global
+    * @param request - The request object
+    * @param response - The response object
+    * @param next - The next middleware
+  */
   public function __invoke($request, $response, $next){
 
     $this->container->view->getEnvironment()->addGlobal('csrf', [
