@@ -1,11 +1,20 @@
 <?php
 /**
-  * Haulage Management System - Routes File
+  * Haulage Management System - routes.php
   *
-  * @author Rhys Evans
-  * @version 19/05/2018
-  * 2018 (C) Rhys Evans
-*/
+  * The project's router, this is where all the routes are grouped and added. The router is split into three groups:
+  *  > Guest
+  *  > Authed
+  *  > Admin
+  *
+  * PHP Version 7
+  *
+  * 2018 (c) Rhys Evans <rhys301097@gmail.com>
+  *
+  * @license http://www.php.net/license/3_01.txt  PHP License 3.01
+  * @author Rhys Evans <rhys301097@gmail.com>
+  * @version 0.1
+  */
 
 use Slim\Http\Request;
 use Slim\Http\Response;

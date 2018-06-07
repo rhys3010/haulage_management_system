@@ -1,3 +1,15 @@
+/**
+  * Haulage Management System - haulage-management-charts.js
+  *
+  * The javascript file to load ajax data and create charts. 
+  *
+  *
+  * 2018 (c) Rhys Evans <rhys301097@gmail.com>
+  *
+  * @author Rhys Evans <rhys301097@gmail.com>
+  * @version 0.1
+  */
+
 $(document).ready(function(){
 	$.ajax({
     dataType: "json",

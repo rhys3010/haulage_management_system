@@ -1,12 +1,16 @@
--- MySQL dump 10.13  Distrib 5.7.22, for Linux (x86_64)
---
--- Host: localhost    Database: haulage_management_system
--- ------------------------------------------------------
--- Server version	5.7.22-0ubuntu0.16.04.1
-
---
--- Table structure for table `hauliers`
---
+/**
+  * Haulage Management System - schema.sql
+  *
+  * The data schema to create the relations needed to support the system's database.
+  *
+  * PHP Version 7
+  *
+  * 2018 (c) Rhys Evans <rhys301097@gmail.com>
+  *
+  * @license http://www.php.net/license/3_01.txt  PHP License 3.01
+  * @author Rhys Evans <rhys301097@gmail.com>
+  * @version 0.1
+  */
 
 DROP TABLE IF EXISTS `hauliers`;
 CREATE TABLE `hauliers` (

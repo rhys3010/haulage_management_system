@@ -1,11 +1,17 @@
 <?php
 /**
-  * Haulage Management System - Password Change Controller
+  * Haulage Management System - PasswordController.php
   *
-  * @author Rhys Evans
-  * @version 24/05/2018
-  * 2018 (C) Rhys Evans
-*/
+  * Controller to handle the change password modal view
+  *
+  * PHP Version 7
+  *
+  * 2018 (c) Rhys Evans <rhys301097@gmail.com>
+  *
+  * @license http://www.php.net/license/3_01.txt  PHP License 3.01
+  * @author Rhys Evans <rhys301097@gmail.com>
+  * @version 0.1
+  */
 
 namespace App\Controllers\Auth;
 
@@ -15,11 +21,21 @@ use Respect\Validation\Validator as v;
 
 class PasswordController extends Controller{
 
+  /**
+    * Handle the get request to render change password view
+    * @param request - The request object
+    * @param response - The response object
+  */
   public function getChangePassword($request, $response){
 
     return $this->view->render($response, 'password.twig');
   }
 
+  /**
+    * Handle the post request to change password
+    * @param request - The request object
+    * @param response - The response object
+  */
   public function postChangePassword($request, $response){
     $validation = $this->validator->validate($request, [
 
@@ -45,9 +61,6 @@ class PasswordController extends Controller{
 
     return $response->withRedirect($this->router->pathFor('dashboard'));
   }
-
-
-
 }
 
 ?>

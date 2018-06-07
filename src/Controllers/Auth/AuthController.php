@@ -1,11 +1,17 @@
 <?php
 /**
-  * Haulage Management System - Auth Controller
+  * Haulage Management System - AuthController.php
   *
-  * @author Rhys Evans
-  * @version 20/05/2018
-  * 2018 (C) Rhys Evans
-*/
+  * Controller to handle HTTP GET and POST methods of the auth views (sign out / sign in)
+  *
+  * PHP Version 7
+  *
+  * 2018 (c) Rhys Evans <rhys301097@gmail.com>
+  *
+  * @license http://www.php.net/license/3_01.txt  PHP License 3.01
+  * @author Rhys Evans <rhys301097@gmail.com>
+  * @version 0.1
+  */
 
 namespace App\Controllers\Auth;
 
@@ -13,11 +19,13 @@ use App\Models\User;
 use App\Controllers\Controller;
 use Respect\Validation\Validator as v;
 
-/**
-  * Auth Controller Class - Handle the login model and view
-*/
 class AuthController extends Controller {
 
+  /**
+    * Handle the router's signout method
+    * @param request - The request object
+    * @param response - The response object
+  */
   public function getSignOut($request, $response){
 
     // Enter Log
@@ -30,11 +38,21 @@ class AuthController extends Controller {
     return $response->withRedirect($this->router->pathFor('auth.signin'));
   }
 
+  /**
+    * Handle the router's sign in get method by rendering the login view
+    * @param request - The request object
+    * @param response - The response object
+  */
   public function getSignIn($request, $response){
 
     return $this->view->render($response, 'login.twig');
   }
 
+  /**
+    * Handle the router's sign in post method by attempting to log the user in and handling validation etc
+    * @param request - The request object
+    * @param response - The response object
+  */
   public function postSignIn($request, $response){
 
     $auth = $this->auth->attempt(

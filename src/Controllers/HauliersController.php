@@ -1,12 +1,17 @@
 <?php
-
 /**
-  * Haulage Management System - Hauliers Controller
+  * Haulage Management System - HauliersController.php
   *
-  * @author Rhys Evans
-  * @version 24/05/2018
-  * 2018 (C) Rhys Evans
-*/
+  * The controller class for hauliers view, handles haulier list and haulier registration
+  *
+  * PHP Version 7
+  *
+  * 2018 (c) Rhys Evans <rhys301097@gmail.com>
+  *
+  * @license http://www.php.net/license/3_01.txt  PHP License 3.01
+  * @author Rhys Evans <rhys301097@gmail.com>
+  * @version 0.1
+  */
 
 namespace App\Controllers;
 
@@ -15,18 +20,27 @@ use App\Models\User;
 use \Slim\Views\Twig as View;
 use Respect\Validation\Validator as v;
 
-/**
-  * Hauliers Controller Class - Handle the hauliers model and view
-*/
+
 class HauliersController extends Controller {
 
+  /**
+    * Render the hauliers view
+    * @param request - The request object
+    * @param response - The response object
+  */
   public function getHauliers($request, $response){
-
     $this->container->view->render($response, 'hauliers.twig');
   }
 
+  /**
+    * Handle form submission of new haulier registration
+    * @param request - The request object
+    * @param response - The response object
+    * @param response - Redirected response to hauliers page
+  */
   public function postAddHaulier($request, $response){
 
+    // Validate Form
     $validation = $this->validator->validate($request, [
       'short_name' => v::notEmpty()->length(2, 10)->uniqueHaulier(),
       'name' => v::notEmpty()->length(3, 255),
@@ -51,6 +65,12 @@ class HauliersController extends Controller {
     return $response->withRedirect($this->router->pathFor('hauliers'));
   }
 
+  /**
+    * Handle form submission of haulier deletion (submitted from confirmation modal)
+    * @param request - The request object
+    * @param response - The response object
+    * @param response - Redirected response to hauliers page
+  */
   public function postRemoveHaulier($request, $response){
 
     if($this->container->auth->checkAdmin()){
@@ -67,17 +87,12 @@ class HauliersController extends Controller {
   }
 
   /**
-    * Return an array of all hauliers
+    * Get all hauliers
+    * @param hauliers - All haulier entries
   */
   public function all(){
     return Haulier::get();
   }
-
-  public function add(){
-
-  }
-
-
 }
 
 ?>

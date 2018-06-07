@@ -1,3 +1,15 @@
+/**
+  * Haulage Management System - haulage-management-tables.js
+  *
+  * The javascript file to load ajax data and create tables to display data from the system's database.
+  *
+  *
+  * 2018 (c) Rhys Evans <rhys301097@gmail.com>
+  *
+  * @author Rhys Evans <rhys301097@gmail.com>
+  * @version 0.1
+  */
+
 // Get the search param from URL query string
 function getSearchParam(){
   var vars = [], hash;

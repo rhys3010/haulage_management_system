@@ -1,12 +1,17 @@
 <?php
-
 /**
-  * Haulage Management System - Feedback Controller
+  * Haulage Management System - FeedbackController.php
   *
-  * @author Rhys Evans
-  * @version 27/05/2018
-  * 2018 (C) Rhys Evans
-*/
+  * The controller class for the feedback submission view.
+  *
+  * PHP Version 7
+  *
+  * 2018 (c) Rhys Evans <rhys301097@gmail.com>
+  *
+  * @license http://www.php.net/license/3_01.txt  PHP License 3.01
+  * @author Rhys Evans <rhys301097@gmail.com>
+  * @version 0.1
+  */
 
 namespace App\Controllers;
 
@@ -16,12 +21,24 @@ use Respect\Validation\Validator as v;
 
 class FeedbackController extends Controller {
 
+  /**
+    * Render the feedback form view
+    * @param request - The request object
+    * @param response - The response object
+  */
   public function getFeedback($request, $response){
     $this->container->view->render($response, 'feedback.twig');
   }
 
+  /**
+    * Handle the feedback form submission, validation, submission and logging
+    * @param request - The request object
+    * @param response - The response object
+    * @return response - Redirected response to feedback page
+  */
   public function postFeedback($request, $response){
 
+    // Validate the form
     $validation = $this->validator->validate($request, [
 
       'subject' => v::notEmpty()->length(2, 255),

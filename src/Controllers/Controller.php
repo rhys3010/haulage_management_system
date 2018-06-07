@@ -1,33 +1,33 @@
 <?php
 /**
-  * Haulage Management System - Base Controller
+  * Haulage Management System - Controller.php
   *
-  * @author Rhys Evans
-  * @version 20/05/2018
-  * 2018 (C) Rhys Evans
-*/
+  * The base view controller, all other controllers will extend this class.
+  *
+  * PHP Version 7
+  *
+  * 2018 (c) Rhys Evans <rhys301097@gmail.com>
+  *
+  * @license http://www.php.net/license/3_01.txt  PHP License 3.01
+  * @author Rhys Evans <rhys301097@gmail.com>
+  * @version 0.1
+  */
 
 namespace App\Controllers;
 
-/**
-  * Base Controller class
-  * All screen controller inherit from this class
-*/
 class Controller{
 
-  // Container object
+  // Dependency Container object
   protected $container;
 
   /**
-    * Base constructor for all controllers
+    * Controller constructor to initialize the container object
+    * @param container - Slim's dependency container
   */
   public function __construct($container){
     $this->container = $container;
   }
 
-  /**
-    * Get any container property
-  */
   public function __get($property){
     if($this->container->{$property}){
       return $this->container->{$property};

@@ -1,11 +1,17 @@
 <?php
 /**
-  * Haulage Management System - Configuration File
+  * Haulage Management System - settings.php
   *
-  * @author Rhys Evans
-  * @version 19/05/2018
-  * 2018 (C) Rhys Evans
-*/
+  * The project's configuration file, this is where all the preferences and config info is loaded from a .env file.
+  *
+  * PHP Version 7
+  *
+  * 2018 (c) Rhys Evans <rhys301097@gmail.com>
+  *
+  * @license http://www.php.net/license/3_01.txt  PHP License 3.01
+  * @author Rhys Evans <rhys301097@gmail.com>
+  * @version 0.1
+  */
 $settings = [];
 
 // Load .env file for sensitive configs
@@ -13,6 +19,7 @@ $dotenv = new Dotenv\Dotenv(__DIR__);
 $dotenv->load();
 
 // Slim settings
+// Set this to false in production
 $settings['displayErrorDetails'] = true;
 $settings['determineRouteBeforeAppMiddleware'] = true;
 

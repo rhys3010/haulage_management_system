@@ -1,12 +1,17 @@
 <?php
-
 /**
-  * Haulage Management System - Admin Tools Controller
+  * Haulage Management System - AdminToolsController.php
   *
-  * @author Rhys Evans
-  * @version 25/05/2018
-  * 2018 (C) Rhys Evans
-*/
+  * Controller to handle the admin tools views available from the nav.
+  *
+  * PHP Version 7
+  *
+  * 2018 (c) Rhys Evans <rhys301097@gmail.com>
+  *
+  * @license http://www.php.net/license/3_01.txt  PHP License 3.01
+  * @author Rhys Evans <rhys301097@gmail.com>
+  * @version 0.1
+  */
 
 namespace App\Controllers;
 
@@ -16,16 +21,30 @@ use Respect\Validation\Validator as v;
 
 class AdminToolsController extends Controller {
 
+  /**
+    * Render the users table and user management view
+    * @param request - The request object
+    * @param response - The response object
+  */
   public function getManageUsers($request, $response){
-
     $this->container->view->render($response, 'manage-users.twig');
   }
 
+  /**
+    * Render the user registration view and form
+    * @param request - The request object
+    * @param response - The response object
+  */
   public function getRegisterUser($request, $response){
-
     $this->container->view->render($response, 'register-user.twig');
   }
 
+  /**
+    * Handle the form submission for user deletion (submitted from confirmation modal)
+    * @param request - The request object
+    * @param response - The response object
+    * @return response - Redirected response to user management page
+  */
   public function postRemoveUser($request, $response){
 
     $user = User::find($request->getParam('id'));
@@ -39,12 +58,19 @@ class AdminToolsController extends Controller {
       // Remove user
       $user = User::destroy($request->getParam('id'));
     }
-
     return $response->withRedirect($this->router->pathFor('admin.manage'));
   }
 
+  /**
+    * Handle the form submission for user registration from the main form
+    * and deal with validation and loggin etc
+    * @param request - The request object
+    * @param response - The response object
+    * @return response - Redirected response to user registration page
+  */
   public function postAdduser($request, $response){
 
+    // Validate form 
     $validation = $this->validator->validate($request, [
       'name' => v::notEmpty()->length(2, 255),
       'email' => v::notEmpty()->noWhitespace()->uniqueEmail(),

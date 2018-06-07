@@ -1,3 +1,15 @@
+/**
+  * Haulage Management System - haulage-management.js
+  *
+  * The system's main JavaScript file, used for utility purposes such as form submissions and modal handling.
+  *
+  *
+  * 2018 (c) Rhys Evans <rhys301097@gmail.com>
+  *
+  * @author Rhys Evans <rhys301097@gmail.com>
+  * @version 0.1
+  */
+
 (function($) {
   "use strict"; // Start of use strict
   // Configure tooltips for collapsed side navigation
